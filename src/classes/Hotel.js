@@ -2,11 +2,11 @@ import Bookings from "./Bookings";
 
 class Hotel {
     constructor( customersData, roomsData, bookingsData ) {
-        // have a currentUser...maybe??
+        this.allCustomers = customersData;
         this.allRooms = roomsData;
         this.allBookings = bookingsData;
-        this.allCustomers = customersData;
         this.roomAvailability = [ ];
+        // have a currentUser...maybe??
     };
 
     checkAvailabilityByDate( date ) { // KEEP FUNCTION IN MIND IN CASE DATE NEEDS TO BE CONVERTED LATER!!!
@@ -24,9 +24,14 @@ class Hotel {
 		return this.roomAvailability
     }
 
+    filterAvailableRooms( type ) {
+        let roomTypes = this.roomAvailability
+        if( type ) {
+            roomTypes = this.roomAvailability.filter( room => room.roomType === type )
+        }
+        return roomTypes
+    }
 }
-
-
 
 export default Hotel;
 

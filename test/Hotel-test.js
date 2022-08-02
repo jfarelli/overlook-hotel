@@ -130,4 +130,47 @@ describe( 'Hotel', ( ) => {
             );
     } ); 
 
+    it( 'Should filter available Rooms in the Hotel by TYPE', ( ) => {
+        hotel1.checkAvailabilityByDate( "2022/01/24" )
+        expect( hotel1.filterAvailableRooms( 'suite' ) ).to.be.a( "array" );
+        expect( hotel1.filterAvailableRooms( 'suite' ) ).to.deep.equal
+            (  
+                [
+                    {
+                        number: 3,
+                        roomType: 'suite',
+                        bidet: false,
+                        bedSize: 'king',
+                        numBeds: 1,
+                        costPerNight: 491.14
+                    }
+                  ]
+            );
+        
+        hotel1.checkAvailabilityByDate( "2022/02/16" )
+        expect( hotel1.filterAvailableRooms( 'single room' ) ).to.be.a( "array" );
+        expect( hotel1.filterAvailableRooms( 'single room' ) ).to.deep.equal
+            (  
+                [
+                    {
+                        number: 4,
+                        roomType: 'single room',
+                        bidet: false,
+                        bedSize: 'queen',
+                        numBeds: 1,
+                        costPerNight: 429.44
+                    },
+                    {
+                        number: 5,
+                        roomType: 'single room',
+                        bidet: true,
+                        bedSize: 'twin',
+                        numBeds: 2,
+                        costPerNight: 340.17
+                    }
+                ]
+            );
+            
+    } ); 
+
 } );

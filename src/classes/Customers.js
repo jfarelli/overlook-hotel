@@ -12,7 +12,7 @@ class Customers {
         this.customerBookingHistory.forEach( booking => {
             booking.getRoomDetailsFromBookings( roomsData )
         } )
-        // console.log('this.customerbookinghistory: ', this.customerBookingHistory)
+        console.log('this.customerbookinghistory: ', this.customerBookingHistory)
     }
 
     getTotalCostOfRoomsForCustomer( ) {
