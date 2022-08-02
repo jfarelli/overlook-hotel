@@ -16,7 +16,7 @@ let currentCustomer;
 
 // ====================== QUERY SELECTORS / ELEMENTS BY ID ===========================
 let welcomeMessage = document.querySelector( '.welcome-message' );
-
+let customerRoomsTotalCost = document.querySelector( '.total-rooms-cost' );
 
 // ============================ EVENT LISTENERS ======================================
 window.addEventListener( 'load', loadData );
@@ -28,11 +28,13 @@ function loadData( ) {
         listOfRooms = data[ 1 ].rooms;
         listOFBookings = data[ 2 ].bookings;
         currentCustomer = new Customers( listOfCustomers[ Math.floor( Math.random( ) * listOfCustomers.length ) ] ) 
-        displayRandomCustomerName( )
+        displayRandomCustomerInfo( )
         } );
 }
 
 
-function displayRandomCustomerName( ) {
+function displayRandomCustomerInfo( ) {
+    let newCustomer = new Customers( currentCustomer );
     welcomeMessage.innerText = `Welcome, ${ currentCustomer.name.split( ' ' )[ 0 ] }!`;
+    customerRoomsTotalCost.innerText = `Total Spent on Rooms: $${ newCustomer.getTotalCostOfRoomsForCustomer( ) }`
 }
