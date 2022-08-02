@@ -1,4 +1,4 @@
-// import Bookings from './Bookings';
+import Bookings from './Bookings';
 
 class Customers {
     constructor( customersData ) {
@@ -12,6 +12,7 @@ class Customers {
         this.customerBookingHistory.forEach( booking => {
             booking.getRoomDetailsFromBookings( roomsData )
         } )
+        // console.log('this.customerbookinghistory: ', this.customerBookingHistory)
     }
 
     getTotalCostOfRoomsForCustomer( ) {

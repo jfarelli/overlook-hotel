@@ -10,7 +10,7 @@ const roomsData =
         },
         {
             number: 2,
-            roomType: "suite",
+            roomType: "junior suite",
             bidet: false,
             bedSize: "full",
             numBeds: 2,
@@ -18,7 +18,7 @@ const roomsData =
         },
         {
             number: 3,
-            roomType: "single room",
+            roomType: "suite",
             bidet: false,
             bedSize: "king",
             numBeds: 1,
@@ -36,7 +36,7 @@ const roomsData =
             number: 5,
             roomType: "single room",
             bidet: true,
-            bedSize: "queen",
+            bedSize: "twin",
             numBeds: 2,
             costPerNight: 340.17
         }
