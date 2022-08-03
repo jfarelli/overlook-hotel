@@ -1,4 +1,4 @@
-import Bookings from "./Bookings";
+import Booking from "./Booking";
 
 class Hotel {
     constructor( customersData, roomsData, bookingsData ) {
@@ -25,11 +25,9 @@ class Hotel {
     }
 
     filterAvailableRooms( type ) {
-        let roomTypes = this.roomAvailability
         if( type ) {
-            roomTypes = this.roomAvailability.filter( room => room.roomType === type )
+            return this.roomAvailability.filter( room => room.roomType === type )
         }
-        return roomTypes
     }
 }
 
@@ -51,6 +49,6 @@ export default Hotel;
 // saveBookings( bookingsData ) {
 //     console.log('BOOKINGSDATA: ', bookingsData)
 //     return bookingsData.map( booking => {
-//         return new Bookings( booking )
+//         return new Booking( booking )
 //     } )
 // }

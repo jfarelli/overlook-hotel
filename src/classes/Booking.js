@@ -1,6 +1,6 @@
-import Rooms from "./Rooms";
+import Room from "./Room";
 
-class Bookings {
+class Booking {
     constructor( bookingsData ) {
        this.id = bookingsData.id;
        this.userID = bookingsData.userID;
@@ -10,14 +10,14 @@ class Bookings {
     };
 
     getRoomDetailsFromBookings( roomsData ) {
-        let match = roomsData.find( room => room.number === this.roomNumber )
-        this.roomDetails = new Rooms( match )
+        let roomAndBookingMatch = roomsData.find( room => room.number === this.roomNumber )
+        this.roomDetails = new Room( roomAndBookingMatch )
     }
 
-    
+
 
 }
 
 
 
-export default Bookings;
+export default Booking;

@@ -1,16 +1,14 @@
 // import chai from 'chai';
 import { expect } from 'chai'; 
-import Bookings from '../src/classes/Bookings';
-import Customers from '../src/classes/Customers'; 
-import Rooms from '../src/classes/Rooms';
+import Booking from '../src/classes/Booking';
+import Customer from '../src/classes/Customer'; 
+import Room from '../src/classes/Room';
 import Hotel from '../src/classes/Hotel';
 import bookingsData from '../src/sample-data/bookings-sample-data';
 import customersData from '../src/sample-data/customers-sample-data';
 import roomsData from '../src/sample-data/rooms-sample-data';
 
 describe( 'Hotel', ( ) => {
-    let bookingData;
-
     let customer1;
 
     let booking1;
@@ -20,13 +18,12 @@ describe( 'Hotel', ( ) => {
     let hotel1;
 
     beforeEach( ( ) => {
-        bookingData = bookingsData.map( bookings => new Bookings( bookings ) )
         
-        customer1 = new Customers( customersData[ 0 ] );
+        customer1 = new Customer( customersData[ 0 ] );
 
-        booking1 = new Bookings( bookingsData[ 0 ] );
+        booking1 = new Booking( bookingsData[ 0 ] );
 
-        room1 = new Rooms( roomsData[ 0 ] );
+        room1 = new Room( roomsData[ 0 ] );
 
         hotel1 = new Hotel( customersData, roomsData, bookingsData  )
 
@@ -41,14 +38,17 @@ describe( 'Hotel', ( ) => {
     } );
     
     it( 'Should store all Rooms in the Hotel', ( ) => {
-      expect( hotel1.allRooms).to.equal( roomsData );
+        expect( hotel1.allRooms ).to.be.a( "array" );
+        expect( hotel1.allRooms ).to.equal( roomsData );
     } ); 
     
     it( 'Should store all Bookings in the Hotel', ( ) => {
+        expect( hotel1.allRooms ).to.be.a( "array" );
         expect( hotel1.allBookings).to.equal( bookingsData );
     } ); 
 
     it( 'Should store all Customer Data in the Hotel', ( ) => {
+        expect( hotel1.allRooms ).to.be.a( "array" );
         expect( hotel1.allCustomers).to.equal( customersData );
     } ); 
 

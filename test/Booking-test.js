@@ -1,11 +1,11 @@
 // import chai from 'chai';
 import { expect } from 'chai'; 
-import Bookings from '../src/classes/Bookings'; 
-import Rooms from '../src/classes/Rooms';
+import Booking from '../src/classes/Booking'; 
+import Room from '../src/classes/Room';
 import bookingsData from '../src/sample-data/bookings-sample-data';
 import roomsData from '../src/sample-data/rooms-sample-data';
 
-describe( 'Bookings', ( ) => {
+describe( 'Booking', ( ) => {
 
   let booking1;
   let booking2;
@@ -13,21 +13,21 @@ describe( 'Bookings', ( ) => {
 
   beforeEach( ( ) => {
     
-    booking1 = new Bookings( bookingsData[ 0 ] );
-    booking2 = new Bookings( bookingsData[ 1 ] );
+    booking1 = new Booking( bookingsData[ 0 ] );
+    booking2 = new Booking( bookingsData[ 1 ] );
 
-    room1 = new Rooms( roomsData[ 0 ] )
+    room1 = new Room( roomsData[ 0 ] )
 
   } );
 
   it( 'Should be a function', ( ) => {
-    expect( Bookings ).to.be.a('function');
+    expect( Booking ).to.be.a('function');
   } );
 
   it( 'Should be an instance of User', ( ) => {
-    expect( booking1 ).to.be.an.instanceOf( Bookings );
+    expect( booking1 ).to.be.an.instanceOf( Booking );
 
-    expect( booking2 ).to.be.an.instanceOf( Bookings );
+    expect( booking2 ).to.be.an.instanceOf( Booking );
   } );
 
   it( 'Should have a Booking ID', ( ) => {
@@ -63,13 +63,13 @@ describe( 'Bookings', ( ) => {
   } );
 
 
-  it( 'Should match Booking to Rooms', ( ) => {
+  it( 'Should match Booking to Room', ( ) => {
     booking1.getRoomDetailsFromBookings( roomsData );
-    expect(booking1.roomDetails).to.be.a.instanceOf( Rooms );
+    expect(booking1.roomDetails).to.be.a.instanceOf( Room );
     expect(booking1.roomDetails.number).to.equal( 1 );
 
     booking2.getRoomDetailsFromBookings( roomsData );
-    expect(booking2.roomDetails).to.be.a.instanceOf( Rooms );
+    expect(booking2.roomDetails).to.be.a.instanceOf( Room );
     expect(booking2.roomDetails.number).to.equal( 2 );
   } );
 

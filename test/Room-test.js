@@ -1,28 +1,28 @@
 // import chai from 'chai';
 import { expect } from 'chai'; 
-import Rooms from '../src/classes/Rooms'; 
+import Room from '../src/classes/Room'; 
 import roomsData from '../src/sample-data/rooms-sample-data';
 
-describe( 'Rooms', ( ) => {
+describe( 'Room', ( ) => {
 
   let room1;
   let room2;
 
   beforeEach( ( ) => {
-        
-    room1 = new Rooms( roomsData[0] );
-    room2 = new Rooms( roomsData[1] );
+     
+    room1 = new Room( roomsData[0] );
+    room2 = new Room( roomsData[1] );
 
   } );
 
   it( 'Should be a function', ( ) => {
-    expect( Rooms ).to.be.a('function');
+    expect( Room ).to.be.a('function');
   } );
 
-  it( 'Should be an instance of Rooms', ( ) => {
-    expect( room1 ).to.be.an.instanceOf( Rooms );
+  it( 'Should be an instance of Room', ( ) => {
+    expect( room1 ).to.be.an.instanceOf( Room );
 
-    expect( room2 ).to.be.an.instanceOf( Rooms );
+    expect( room2 ).to.be.an.instanceOf( Room );
   } );
 
   it( 'Should have a Room NUMBER', ( ) => {

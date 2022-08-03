@@ -1,8 +1,8 @@
 // import chai from 'chai';
 import { expect } from 'chai'; 
-import Bookings from '../src/classes/Bookings';
-import Customers from '../src/classes/Customers'; 
-import Rooms from '../src/classes/Rooms';
+import Booking from '../src/classes/Booking';
+import Customer from '../src/classes/Customer'; 
+import Room from '../src/classes/Room';
 import bookingsData from '../src/sample-data/bookings-sample-data';
 import customersData from '../src/sample-data/customers-sample-data';
 import roomsData from '../src/sample-data/rooms-sample-data';
@@ -21,27 +21,27 @@ describe( 'Customer', ( ) => {
   let room2;
 
   beforeEach( ( ) => {
-    bookingData = bookingsData.map( bookings => new Bookings( bookings ) )
+    bookingData = bookingsData.map( booking => new Booking( booking ) )
     
-    customer1 = new Customers( customersData[ 0 ] );
-    customer2 = new Customers( customersData[ 1 ] );
+    customer1 = new Customer( customersData[ 0 ] );
+    customer2 = new Customer( customersData[ 1 ] );
 
-    booking1 = new Bookings( bookingData[ 0 ] );
-    booking2 = new Bookings( bookingData[ 4 ] );
+    booking1 = new Booking( bookingData[ 0 ] );
+    booking2 = new Booking( bookingData[ 4 ] );
 
-    room1 = new Rooms( roomsData[ 0 ] );
-    room2 = new Rooms( roomsData[ 1 ] );
+    // room1 = new Room( roomsData[ 0 ] );
+    // room2 = new Room( roomsData[ 1 ] );
 
   } );
 
   it( 'Should be a function', ( ) => {
-    expect( Customers ).to.be.a('function');
+    expect( Customer ).to.be.a('function');
   } );
 
   it( 'Should be an instance of Customer', ( ) => {
-    expect( customer1 ).to.be.an.instanceOf( Customers );
+    expect( customer1 ).to.be.an.instanceOf( Customer );
 
-    expect( customer2 ).to.be.an.instanceOf( Customers );
+    expect( customer2 ).to.be.an.instanceOf( Customer );
   } );
 
   it( 'Should take in a Customer\'s ID', ( ) => {
@@ -69,18 +69,20 @@ describe( 'Customer', ( ) => {
   } );
 
   it( 'Should get the Customer\'s Booking HISTORY', ( ) => {
-    customer1.getCustomersBookingHistory( bookingData, roomsData )
+    customer1.getCustomersBookingHistory( bookingData, roomsData );
+    expect( customer1.customerBookingHistory ).to.be.a( "array" );
     expect( customer1.customerBookingHistory[ 0 ].id ).to.equal( booking1.id );
 
     customer2.getCustomersBookingHistory( bookingData, roomsData )
+    expect( customer2.customerBookingHistory ).to.be.a( "array" );
     expect( customer2.customerBookingHistory[ 0 ].id ).to.equal( booking2.id );
   } );
 
   it( 'Should get the TOTAL COST of Customer\'s Booking HISTORY', ( ) => {
-    customer1.getCustomersBookingHistory( bookingData, roomsData )
+    customer1.getCustomersBookingHistory( bookingData, roomsData );
     expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1685.32' );
 
-    customer2.getCustomersBookingHistory( bookingData, roomsData )
+    customer2.getCustomersBookingHistory( bookingData, roomsData );
     expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1326.92' );
   } );
 

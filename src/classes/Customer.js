@@ -1,4 +1,4 @@
-import Bookings from './Bookings';
+import Booking from './Booking';
 
 class Customers {
     constructor( customersData ) {
@@ -8,11 +8,13 @@ class Customers {
     };
 
     getCustomersBookingHistory( bookingsData, roomsData ) {
-        this.customerBookingHistory = bookingsData.filter( booking => booking.userID === this.id )
+        this.customerBookingHistory = bookingsData
+            .filter( booking => booking.userID === this.id )
+                .map( item => new Booking( item ) )
         this.customerBookingHistory.forEach( booking => {
             booking.getRoomDetailsFromBookings( roomsData )
+            // console.log('this.customerbookinghistory: ', this.customerBookingHistory)
         } )
-        console.log('this.customerbookinghistory: ', this.customerBookingHistory)
     }
 
     getTotalCostOfRoomsForCustomer( ) {
