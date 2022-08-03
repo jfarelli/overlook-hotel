@@ -26,7 +26,7 @@ label {
 
 .grid-container {
   display: grid;
-  grid-template-rows: 170px 50px 1000px;
+  grid-template-rows: 170px 50px 90rem;
   height: 100%;
   width: 100%;
 }
@@ -80,18 +80,18 @@ label {
 }
 
 .center {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(30, 108, 65, 0.7);
   text-align: center;
 }
 
 .bottom-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(25%, 35%);
+  grid-auto-rows: minmax(25%, 100%);
   grid-gap: 12px;
   padding: 20px;
   /* background: rgba(220,220,220, 0.2); */
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.6) auto; */
   box-shadow: 0 1px 6px rgba(0,0,0, .35);
 }
 
@@ -100,6 +100,10 @@ label {
   box-shadow: 0 1px 6px rgba(0,0,0, .35);
   text-align: center;
   background: rgba(254,254,254, 0.9);
+}
+
+.grid-item:hover {
+  box-shadow: 0 1px 6px rgba(0,0,0, .9);
 }
 
 .hotel-image {
