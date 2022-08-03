@@ -20,7 +20,7 @@ let hotel;
 
 // ====================== QUERY SELECTORS / ELEMENTS BY ID ===========================
 let welcomeMessage = document.querySelector( '.welcome-message' );
-// let customerRoomsTotalCost = document.querySelector( '.total-rooms-cost' );
+let customerRoomsTotalCost = document.querySelector( '.total-rooms-cost' );
 let bookingHistoryDisplay = document.querySelector( '.bottom-grid' );
 
 // ============================ EVENT LISTENERS ======================================
@@ -42,19 +42,22 @@ function loadData( ) {
 
 
 function displayRandomCustomerInfo( ) {
-    welcomeMessage.innerText = `Welcome, ${ currentCustomer.name.split( ' ' )[ 0 ] }!`;
+    welcomeMessage.innerText = `Welcome, ${ currentCustomer.name }!`;
 }
 
 function displayCustomersBookingHistory( ) {
     currentCustomer.getCustomersBookingHistory( listOfBookings, listOfRooms )
-    console.log('CURR CUSTOMER: ', currentCustomer)
-    return currentCustomer.customerBookingHistory.map( booking => console.log('BOOKING: ', booking))
+    
+    customerRoomsTotalCost.innerHTML = `$${currentCustomer.getTotalCostOfRoomsForCustomer( )}`
+    return currentCustomer.customerBookingHistory.map( booking => {
+        bookingHistoryDisplay.innerHTML += 
+            `<section class="grid-item grid-item-1">
+                <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-image">
+                <p class="booking-date">${ booking.date }</p>
+                <p class="booking-room-type">${ booking.roomDetails.roomType.toUpperCase() }</p>
+                <p class="booking-cost">Room Cost: $${ booking.roomDetails.costPerNight }</p>
+            </section>`
+    } )
 }
 
 
-{/* <section class="grid-item grid-item-1">
-    <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-image">
-    <p class="booking-date">5/22/2002</p>
-    <p class="booking-room-type">Residential Suite</p>
-    <p class="booking-cost">Total Cost: $769.53</p>
-</section> */}
