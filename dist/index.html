@@ -12,8 +12,8 @@
     <div class="top-bar">
         <h1 class="overlook-hotel">Overlook Hotel</h1>
           <div class="welcome">
-            <h2 class="welcome-message">Hey, Dude!</h2>
-            <p class="total-rooms-cost">TOTAL<p>
+            <h2 class="welcome-message"></h2>
+            <p class="total-rooms-cost"><p>
           </div>
         <form class="calendar">
           <label for="select">Book Your Next Room!</label>
@@ -30,7 +30,7 @@
     <div class="center">
       <h3 class="booking-history">Booking History</h3>
     </div>
-    <div class="bottom-grid">
+    <div class="bottom-grid" id="bookingHistoryGrid">
       <!-- <section class="grid-item grid-item-1">
         <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-image">
         <p class="booking-date">5/22/2002</p>
@@ -38,9 +38,7 @@
         <p class="booking-cost">Total Cost: $769.53</p>
       </section> -->
     </div>
-    <!-- <div class="bottom-grid hidden" id="presentTripsWindow"></div>
-    <div class="bottom-grid hidden" id="futureTripsWindow"></div>
-    <div class="bottom-grid hidden" id="pendingTripsWindow"></div> -->
+    <div class="bottom-grid hidden" id="availableRoomsGrid"></div>
   </div>
   
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->

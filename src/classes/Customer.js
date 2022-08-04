@@ -13,7 +13,6 @@ class Customers {
                 .map( item => new Booking( item ) )
         this.customerBookingHistory.forEach( booking => {
             booking.getRoomDetailsFromBookings( roomsData )
-            // console.log('this.customerbookinghistory: ', this.customerBookingHistory)
         } )
     }
 
