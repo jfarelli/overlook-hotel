@@ -1,5 +1,3 @@
-import Booking from "./Booking";
-
 class Hotel {
     constructor( customersData, roomsData, bookingsData ) {
         this.allCustomers = customersData;
@@ -9,9 +7,9 @@ class Hotel {
         // have a currentUser...maybe??
     };
 
-    checkAvailabilityByDate( date ) { // KEEP FUNCTION IN MIND IN CASE DATE NEEDS TO BE CONVERTED LATER!!!
+    checkAvailabilityByDate( date ) { 
         this.roomAvailability = this.allRooms;
-        let filteredBookings = this.allBookings.filter( booking => booking.date === date )
+        let filteredBookings = this.allBookings.filter( booking => booking.date === date.split( '-' ).join( '/' ) )
         let checkRoomAvailability = ( bookedRoom ) => {
 			return filteredBookings.reduce( ( acc, filteredBooking ) => {
 				if( filteredBooking.roomNumber === bookedRoom.number ) {
@@ -24,9 +22,11 @@ class Hotel {
 		return this.roomAvailability
     }
 
-    filterAvailableRooms( type ) {
+    filterAvailableRoomsByType( type ) {
+        console.log(type, '>>>>>>> TYPE ARGUMENT TAKEN IN IN HOTEL CLASS FILE')
         if( type ) {
-            return this.roomAvailability.filter( room => room.roomType === type )
+            this.roomAvailability = this.roomAvailability.filter( room => room.roomType === type )
+            return this.roomAvailability
         }
     }
 }

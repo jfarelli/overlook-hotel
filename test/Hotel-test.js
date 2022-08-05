@@ -132,8 +132,8 @@ describe( 'Hotel', ( ) => {
 
     it( 'Should filter available Rooms in the Hotel by TYPE', ( ) => {
         hotel1.checkAvailabilityByDate( "2022/01/24" )
-        expect( hotel1.filterAvailableRooms( 'suite' ) ).to.be.a( "array" );
-        expect( hotel1.filterAvailableRooms( 'suite' ) ).to.deep.equal
+        expect( hotel1.filterAvailableRoomsByType( 'suite' ) ).to.be.a( "array" );
+        expect( hotel1.filterAvailableRoomsByType( 'suite' ) ).to.deep.equal
             (  
                 [
                     {
@@ -148,8 +148,8 @@ describe( 'Hotel', ( ) => {
             );
         
         hotel1.checkAvailabilityByDate( "2022/02/16" )
-        expect( hotel1.filterAvailableRooms( 'single room' ) ).to.be.a( "array" );
-        expect( hotel1.filterAvailableRooms( 'single room' ) ).to.deep.equal
+        expect( hotel1.filterAvailableRoomsByType( 'single room' ) ).to.be.a( "array" );
+        expect( hotel1.filterAvailableRoomsByType( 'single room' ) ).to.deep.equal
             (  
                 [
                     {
