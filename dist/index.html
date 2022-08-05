@@ -18,12 +18,19 @@
         <form class="calendar">
           <label for="select">Book Your Next Room!</label>
           <input type="date" id="select" class="calendar-entry" name="select-date" required>
-          <!-- add class="hidden" to roomTypeDropDown label -->
-          <label for="roomTypeDropDown">Room Type</label>
-          <select id="roomTypeDropDown" type ="number" name="roomTypeDropDown" placeholder="Room Type" class="room-details"></select>
+          <div class="room-types hidden" id="roomType">
+            <label for="roomTypeDropDown" ></label>
+            <select type="dropdown" id="roomTypeDropDown" name="type" class="room-details">
+              <option value="">Choose a Room Type</option>
+              <option value="residential suite">Residential Suite</option>
+              <option value="suite">Suite</option>
+              <option value="single room">Single Room</option>
+              <option value="junior suite">Junior Suite</option>
+            </select>
+          </div>
           <!-- add class="hidden" to bedSizeDropDown label -->
-          <label for="bedSizeDropDown">Bed Size</label>
-          <select id="bedSizeDropDown" type ="number" name="bedSizeDropDown" placeholder="Bed Size" class="room-details"></select>
+          <!-- <label for="bedSizeDropDown">Bed Size</label> -->
+          <!-- <select id="bedSizeDropDown" type ="number" name="bedSizeDropDown" placeholder="Bed Size" class="room-details"></select> -->
           <!-- <input type="submit" value="Let's Go!" class="submit-button" id="postTripSubmit"></input> -->
         </form>
     </div>  
@@ -38,7 +45,8 @@
         <p class="booking-cost">Total Cost: $769.53</p>
       </section> -->
     </div>
-    <div class="bottom-grid hidden" id="availableRoomsGrid"></div>
+    <div class="bottom-grid hidden" id="availableRoomsByDateGrid"></div>
+    <div class="bottom-grid hidden" id="availableRoomsByTypeGrid"></div>
   </div>
   
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->

@@ -22,9 +22,11 @@ class Hotel {
 		return this.roomAvailability
     }
 
-    filterAvailableRooms( type ) {
+    filterAvailableRoomsByType( type ) {
+        console.log(type, '>>>>>>> TYPE ARGUMENT TAKEN IN IN HOTEL CLASS FILE')
         if( type ) {
-            return this.roomAvailability.filter( room => room.roomType === type )
+            this.roomAvailability = this.roomAvailability.filter( room => room.roomType === type )
+            return this.roomAvailability
         }
     }
 }
