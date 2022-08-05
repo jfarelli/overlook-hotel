@@ -80,10 +80,10 @@ describe( 'Customer', ( ) => {
 
   it( 'Should get the TOTAL COST of Customer\'s Booking HISTORY', ( ) => {
     customer1.getCustomersBookingHistory( bookingData, roomsData );
-    expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1685.32' );
+    expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1,685.32' );
 
     customer2.getCustomersBookingHistory( bookingData, roomsData );
-    expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1326.92' );
+    expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1,326.92' );
   } );
 
 } );

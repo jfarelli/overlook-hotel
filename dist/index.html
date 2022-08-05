@@ -14,14 +14,19 @@
           <div class="welcome">
             <h2 class="welcome-message"></h2>
             <p class="total-rooms-cost"><p>
+            <div class="return-button">
+              <button class="return-home hidden">Return Home</button>
+            </div>
           </div>
         <form class="calendar">
           <label for="select">Book Your Next Room!</label>
           <input type="date" id="select" class="calendar-entry" name="select-date" required>
+          <label for="roomNumber"></label>
+          <input type="number" id="roomNumber" class="room-number hidden" name="select-room-number" required>
           <div class="room-types hidden" id="roomType">
             <label for="roomTypeDropDown" ></label>
             <select type="dropdown" id="roomTypeDropDown" name="type" class="room-details">
-              <option value="">Choose a Room Type</option>
+              <option disabled hidden selected>Choose a Room Type</option>
               <option value="residential suite">Residential Suite</option>
               <option value="suite">Suite</option>
               <option value="single room">Single Room</option>
@@ -31,11 +36,11 @@
           <!-- add class="hidden" to bedSizeDropDown label -->
           <!-- <label for="bedSizeDropDown">Bed Size</label> -->
           <!-- <select id="bedSizeDropDown" type ="number" name="bedSizeDropDown" placeholder="Bed Size" class="room-details"></select> -->
-          <!-- <input type="submit" value="Let's Go!" class="submit-button" id="postTripSubmit"></input> -->
+          <input type="submit" value="Book It!" name="submit-button" class="submit-button hidden" id="postRoomBooking"></input>
         </form>
     </div>  
     <div class="center">
-      <h3 class="booking-history">Booking History</h3>
+      <h3 class="booking-history"></h3>
     </div>
     <div class="bottom-grid" id="bookingHistoryGrid">
       <!-- <section class="grid-item grid-item-1">

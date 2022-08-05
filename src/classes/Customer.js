@@ -20,7 +20,8 @@ class Customers {
         return this.customerBookingHistory.reduce( ( acc, booking ) => {
             acc += booking.roomDetails.costPerNight
             return acc
-        }, 0 ).toFixed( 2 )
+        }, 0 ).toLocaleString( 'en-US' )
     }
+
 }
 export default Customers;

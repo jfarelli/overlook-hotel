@@ -1,14 +1,13 @@
 import './images/hotel-room.jpg'
 import './css/styles.css';
 import { getData } from './apiCalls';
-// import { postData } from './apiCalls';
+import { postData } from './apiCalls';
 import Room from '../src/classes/Room';
 import Booking from '../src/classes/Booking';
 import Customer from '../src/classes/Customer';
 import Hotel from './classes/Hotel';
-// import dayjs from 'dayjs';
-// dayjs( ).format( );
-// console.log('DAYJS: ', dayjs( ).format( ))
+import dayjs from 'dayjs';
+dayjs( ).format( );
 
 
 // ============================ GLOBAL VARIABLES =====================================
@@ -16,6 +15,7 @@ let listOfRooms;
 let listOfBookings;
 let listOfCustomers;
 let currentCustomer;
+let postedRoomData;
 // let room;
 let booking;
 let hotel;
@@ -31,12 +31,30 @@ let roomTypeDropDownMenu = document.getElementById( 'roomTypeDropDown' );
 let availavbleRoomsByDateGrid = document.getElementById( 'availableRoomsByDateGrid' );
 let availavbleRoomsByTypeGrid = document.getElementById( 'availableRoomsByTypeGrid' );
 let bookingHistoryDisplay = document.getElementById( 'bookingHistoryGrid' );
+let availableRoomsByDateGridContainer = document.getElementById( 'availableRoomsByDateGrid' );
+let availableRoomsByTypeGridContainer = document.getElementById( 'availableRoomsByTypeGrid' );
+let returnHomeButton = document.querySelector( '.return-home' );
 
 
 // ============================ EVENT LISTENERS ======================================
 window.addEventListener( 'load', loadData );
 calendarInput.addEventListener( 'change', getAvailableRoomsByDate )
 roomTypeDropDownMenu.addEventListener( 'change', filterAvailableRoomsByRoomTypeOnPage )
+returnHomeButton.addEventListener( 'click', returnHome );
+
+availableRoomsByDateGridContainer.addEventListener( 'click', ( e ) => {
+    if ( e.target.classList == 'submit-button' ){        
+        return bookAvailableRoom( e );
+    }
+} )
+
+
+availableRoomsByTypeGridContainer.addEventListener( 'click', ( e ) => {
+    if( e.target.classList == 'submit-button' ){
+        return bookAvailableRoom( e );
+    }
+} )
+
 
 
 function loadData( ) {
@@ -44,11 +62,12 @@ function loadData( ) {
         listOfCustomers = data[ 0 ].customers;
         listOfRooms = data[ 1 ].rooms;
         listOfBookings = data[ 2 ].bookings;
-        currentCustomer = new Customer( listOfCustomers[ Math.floor( Math.random( ) * listOfCustomers.length ) ] ) 
+        currentCustomer = new Customer( listOfCustomers[ 14 ] ); 
+        // currentCustomer = new Customer( listOfCustomers[ Math.floor( Math.random( ) * listOfCustomers.length ) ] ) 
         console.log('CURRENT CUSTOMER: ', currentCustomer)
         hotel = new Hotel( listOfCustomers, listOfRooms, listOfBookings )
-        displayRandomCustomerInfo( )
-        displayCustomersBookingHistory( )
+        displayRandomCustomerInfo( );
+        displayCustomersBookingHistory( );
         } );
 }
 
@@ -59,9 +78,10 @@ function displayRandomCustomerInfo( ) {
 
 
 function displayCustomersBookingHistory( ) {
-    currentCustomer.getCustomersBookingHistory( listOfBookings, listOfRooms )
-    customerRoomsTotalCost.innerHTML = `$${currentCustomer.getTotalCostOfRoomsForCustomer( )}`
+    currentCustomer.getCustomersBookingHistory( listOfBookings, listOfRooms );
+    customerRoomsTotalCost.innerHTML = `$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }`;
     return currentCustomer.customerBookingHistory.map( booking => {
+        bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`
         bookingHistoryDisplay.innerHTML += 
             `<section class="grid-item grid-item-1">
                 <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-image">
@@ -86,8 +106,11 @@ function displayDateInTitle( e ){
 
 
 function getAvailableRoomsByDate( e ) {
-    e.preventDefault();
+    availavbleRoomsByDateGrid.innerHTML = '';
+    e.preventDefault( );
     bookingHistoryDisplay.classList.add( 'hidden' );
+    availavbleRoomsByTypeGrid.classList.add( 'hidden' );
+    returnHomeButton.classList.remove( 'hidden' );
     availavbleRoomsByDateGrid.classList.remove( 'hidden' );
     roomTypesDiv.classList.remove('hidden')
     roomTypeDropDownMenu += `<option value="${ roomTypeDropDownMenu.value }">${ roomTypeDropDownMenu.value }</option>`
@@ -106,12 +129,12 @@ function getAvailableRoomsByDate( e ) {
                     .join(' ') }</p>
                 <p class="booking-room-type">${ availableRoom.bedSize.charAt( 0 ).toUpperCase( ) + availableRoom.bedSize.slice( 1 ) } Bed</p>
                 <p class="booking-cost">Room Cost: $${ availableRoom.costPerNight }</p>
-                <button class="book-it-button" id="bookIt">Book It!</button>
+                <input type="submit" value="Book It!" name="select-booking" class="submit-button" id="${ availableRoom.number }"></input>
             </section>`
         }
-        if( e.target.type === 'select-one') {
-            filterAvailableRoomsByRoomTypeOnPage( e )
-        }       
+        // if( e.target.type === 'select-one') {
+        //     filterAvailableRoomsByRoomTypeOnPage( e )
+        // }       
     } )   
 }
 
@@ -126,12 +149,13 @@ function displayDateInRoomTypeTitle( input ){
 
 
 function filterAvailableRoomsByRoomTypeOnPage( e ){
-    e.preventDefault();
+    // e.preventDefault();
+    availavbleRoomsByTypeGrid.innerHTML = ''
     availavbleRoomsByDateGrid.classList.add( 'hidden' );
     availavbleRoomsByTypeGrid.classList.remove( 'hidden' );
-    hotel.filterAvailableRoomsByType( e.target.value );
-    hotel.roomAvailability.forEach( availableRoom => {
-            bookingHitsoryTitleText.innerText = `There are ${ hotel.roomAvailability.length } ${ e.target.value.toLowerCase( )
+    const filteredRoomsByType = hotel.filterAvailableRoomsByType( e.target.value );
+    filteredRoomsByType.forEach( availableRoom => {
+            bookingHitsoryTitleText.innerText = `There are ${ filteredRoomsByType.length } ${ e.target.value.toLowerCase( )
                 .split(' ')
                 .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
                 .join(' ') }s Available on ${ displayDateInRoomTypeTitle( calendarInput ) }`;  
@@ -144,9 +168,41 @@ function filterAvailableRoomsByRoomTypeOnPage( e ){
                     .join(' ') }</p>
                 <p class="booking-room-type">${ availableRoom.bedSize.charAt( 0 ).toUpperCase( ) + availableRoom.bedSize.slice( 1 ) } Bed</p>
                 <p class="booking-cost">Room Cost: $${ availableRoom.costPerNight }</p>
-                <button class="book-it-button" id="bookIt">Book It!</button>
+                <input type="submit" value="Book It!" name="submit-button" class="submit-button" id="${ availableRoom.number }"></input>
             </section>`
         // }
     } )   
 }
 
+
+function getPostedRoomDataFromForm( e ) {
+    postedRoomData = new FormData( document.querySelector( '.calendar' ) );
+    let newBookedRoom = {
+        userID: currentCustomer.id, 
+        date: dayjs( postedRoomData.get( 'select-date' ) ).format( 'YYYY/MM/DD' ), 
+        roomNumber: parseInt( e.target.id )
+    };
+    return newBookedRoom
+}
+
+function bookAvailableRoom( e ) {
+    e.preventDefault( );
+    let newRoomBooking = getPostedRoomDataFromForm( e );
+    let promiseMyYouWillPost = postData( newRoomBooking );
+    let fetchMeThatPromise = getData( 'bookings' );
+    Promise.all( [ promiseMyYouWillPost, fetchMeThatPromise ] )
+        .then( response => {
+            window.alert( `WOO HOO!!! You're room is booked for ${ dayjs( response[ 0 ].newBooking.date ).format("dddd, MMMM D YYYY") }!` )
+            booking = new Booking( response[ 0 ].newBooking );
+        } )
+        .catch( error => console.log( 'ERROR: ', error ) )
+}
+
+
+function returnHome( ){
+    bookingHistoryDisplay.classList.remove( 'hidden' );
+    availavbleRoomsByDateGrid.classList.add( 'hidden' );
+    availavbleRoomsByTypeGrid.classList.add( 'hidden' );
+    roomTypesDiv.classList.add('hidden')
+    loadData( )
+}
