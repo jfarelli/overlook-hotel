@@ -11,7 +11,8 @@ html, body {
 
 h1 {
   margin: 4px;
-  font-size: 20px;;
+  font-size: 20px;
+  /* transform: rotate(45deg); */
 }
 
 h3 {
@@ -21,7 +22,51 @@ h3 {
 }
 
 label {
-  margin-bottom: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background: rgb(42, 136, 56);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0, .25);
+}
+
+button:hover {
+  background: white;
+  color: rgb(42, 136, 56);
+  box-shadow: 0 6px 10px rgba(0,0,0, .7);
+}
+
+button:active {
+  box-shadow: 0 2px 5px rgba(0,0,0, .9);
+  transform: translateY(3px)
+}
+
+.submit-button {
+  background: rgb(246, 132, 45);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0, .25);
+}
+
+.submit-button:hover {
+  background: rgb(42, 136, 56);
+  color: white;
+  box-shadow: 0 6px 10px rgba(0,0,0, .7);
+}
+
+.submit-button:active {
+  box-shadow: 0 2px 5px rgba(0,0,0, .9);
+  transform: translateY(3px)
 }
 
 .grid-container {
@@ -35,16 +80,23 @@ label {
   /* background: linear-gradient(360deg, rgba(0, 0, 0, 0.7), rgb(246, 132, 45)); */
   background: rgb(246, 132, 45);
   display: grid;
-  align-items: baseline;
+  /* align-items: baseline; */
   width: 100%;
+  /* border-bottom: 2px solid white; */
 }
+
+/* .welcome {
+  pos
+} */
 
 .welcome-message {
   /* border: 1px solid rgb(0, 187, 255); */
   display: flex;
   flex-direction: column;
+  align-content: center;
   align-items: center;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 5px;
   /* padding-bottom: 10px; */
   font-size: 50px;
 }
@@ -53,8 +105,14 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5px;
+  margin: 0;
+  margin-bottom: 10px;
   font-size: 20px;
+}
+
+.return-button {
+  display: flex;
+  justify-content: center;
 }
 
 .calendar {
@@ -79,19 +137,20 @@ label {
 
 .room-details {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 5px;
   margin-bottom: 3px;
 }
 
 .center {
-  background: rgba(30, 108, 65, 0.7);
+  background: rgba(42, 136, 56, 0.8);
   text-align: center;
+  border-top: 2px solid white;;
 }
 
 .bottom-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(25%, 100%);
+  grid-auto-rows: minmax(27%, 27%);
   grid-gap: 12px;
   padding: 20px;
   /* background: rgba(220,220,220, 0.2); */
@@ -107,7 +166,7 @@ label {
 }
 
 .grid-item:hover {
-  box-shadow: 0 1px 6px rgba(0,0,0, .9);
+  box-shadow: 0 5px 15px 5px rgba(0,0,0, .9);
 }
 
 .hotel-image {
