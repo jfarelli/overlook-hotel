@@ -9,14 +9,11 @@ describe( 'Booking', ( ) => {
 
   let booking1;
   let booking2;
-  let room1;
 
   beforeEach( ( ) => {
     
     booking1 = new Booking( bookingsData[ 0 ] );
     booking2 = new Booking( bookingsData[ 1 ] );
-
-    room1 = new Room( roomsData[ 0 ] )
 
   } );
 
