@@ -56,12 +56,15 @@ https://user-images.githubusercontent.com/97558758/183264356-d90b1f90-3988-4cb3-
 <br>
 
 ### Reflections: <a name="reflections"></a>
-* Now that the project is done, what are your takeaways?
+* This
 
 <br>
 
 ### Future Iterations: <a name="future"></a>
-* What would you like to do to the project in the future?
+* Adding a Hotel Manager interaction, so another user can:
+    * Login and manage bookings.
+    * See total bookings & revenue for a given day.
+    * Search for Customers by name and see that user's bookings and total they've spent.
 
 <br>
 
@@ -79,4 +82,4 @@ Chai<br>
 
 ### Contributors: <a name="contributors"></a>
 
-Name: [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/)
+Jordan Farelli: [LinkedIn](https://www.linkedin.com/in/jordan-farelli/) | [GitHub](https://github.com/jfarelli)
