@@ -26,13 +26,25 @@
 
 ### How To Use: <a name="how"></a>
 
-* Let the user know how the page works ( What happens on page load?, What do the buttons do?, What should the user do to navigate the page?, etc... )
+* Logging in:
+    * Username will be the word customer followed by a number from 1-50 to pull up a user: `customer32`
+    * Password will be: `overlook2021`
 
-* Good to include clips of the page working 
+https://user-images.githubusercontent.com/97558758/183264276-c8837a8d-0c06-48c5-b702-53e3aec141c2.mov
 
-    * To format the video so GitHub can read it, I drap and drop my clips into a comment section in GitHub and it'll convert it and give you a link to past in.
+* Customer Display:
 
-https://user-images.githubusercontent.com/98445902/172243113-8f0cc359-4e85-44a3-adda-b1aa825cb9dc.mov
+https://user-images.githubusercontent.com/97558758/183264327-214da683-4fa9-49fa-b73a-f176d1d20068.mov
+
+* Filter by Date and Room Type
+
+https://user-images.githubusercontent.com/97558758/183264344-b77b443b-96fa-4dc4-9631-9c6ac881ee50.mov
+
+* Book a Room and Return Home
+
+https://user-images.githubusercontent.com/97558758/183264356-d90b1f90-3988-4cb3-ac89-97e4c5f7a049.mov
+
+
 
 <br>
 

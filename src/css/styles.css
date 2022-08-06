@@ -222,6 +222,10 @@ button:active {
   color: #3a3a3a;
 }
 
+.login-form-field {
+  margin: 5px;
+}
+
 .loginForm-field {
   width: 10%;
   border: none;
@@ -230,6 +234,7 @@ button:active {
   border-radius: 3px;
   outline: none;
   padding: 0px 0px 5px 5px;
+  margin: 10px;
 }
 
 #loginFormSubmit {
