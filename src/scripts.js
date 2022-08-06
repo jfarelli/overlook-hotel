@@ -16,6 +16,7 @@ let listOfBookings;
 let listOfCustomers;
 let currentCustomer;
 let postedRoomData;
+let customerLoginInfo;
 // let room;
 let booking;
 let hotel;
@@ -35,12 +36,17 @@ let availableRoomsByDateGridContainer = document.getElementById( 'availableRooms
 let availableRoomsByTypeGridContainer = document.getElementById( 'availableRoomsByTypeGrid' );
 let returnHomeButton = document.querySelector( '.return-home' );
 
+let gridContainer = document.querySelector( '.grid-container' );
+let loginWindow = document.getElementById( 'mainLoginHolder' );
+let loginForm = document.getElementById( 'loginForm' );
+
 
 // ============================ EVENT LISTENERS ======================================
-window.addEventListener( 'load', loadData );
+// window.addEventListener( 'load', loadData );
 calendarInput.addEventListener( 'change', getAvailableRoomsByDate )
 roomTypeDropDownMenu.addEventListener( 'change', filterAvailableRoomsByRoomTypeOnPage )
 returnHomeButton.addEventListener( 'click', returnHome );
+loginForm.addEventListener( 'submit', checkCustomerIsValidOnLogin );
 
 availableRoomsByDateGridContainer.addEventListener( 'click', ( e ) => {
     if ( e.target.classList == 'submit-button' ){        
@@ -59,27 +65,25 @@ availableRoomsByTypeGridContainer.addEventListener( 'click', ( e ) => {
 
 function loadData( ) {
     Promise.all( [ getData( 'customers' ), getData( 'rooms' ), getData( 'bookings' ) ] ).then( data => {
+        loginWindow.classList.add( 'hidden' );
+        gridContainer.classList.remove( 'hidden' );
         listOfCustomers = data[ 0 ].customers;
         listOfRooms = data[ 1 ].rooms;
         listOfBookings = data[ 2 ].bookings;
-        currentCustomer = new Customer( listOfCustomers[ 14 ] ); 
+        // currentCustomer = new Customer( listOfCustomers[ 14 ] ); 
         // currentCustomer = new Customer( listOfCustomers[ Math.floor( Math.random( ) * listOfCustomers.length ) ] ) 
-        console.log('CURRENT CUSTOMER: ', currentCustomer)
+        // console.log('CURRENT CUSTOMER: ', currentCustomer)
+        // currentCustomer = new Customer( listOfCustomers );
         hotel = new Hotel( listOfCustomers, listOfRooms, listOfBookings )
-        displayRandomCustomerInfo( );
         displayCustomersBookingHistory( );
         } );
 }
 
 
-function displayRandomCustomerInfo( ) {
-    welcomeMessage.innerText = `Welcome, ${ currentCustomer.name }!`;
-}
-
-
 function displayCustomersBookingHistory( ) {
+    welcomeMessage.innerText = `Welcome, ${ currentCustomer.name }!`;
     currentCustomer.getCustomersBookingHistory( listOfBookings, listOfRooms );
-    customerRoomsTotalCost.innerHTML = `$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }`;
+    customerRoomsTotalCost.innerHTML = `Lifetime Booking Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
     return currentCustomer.customerBookingHistory.map( booking => {
         bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`
         bookingHistoryDisplay.innerHTML += 
@@ -203,6 +207,42 @@ function returnHome( ){
     bookingHistoryDisplay.classList.remove( 'hidden' );
     availavbleRoomsByDateGrid.classList.add( 'hidden' );
     availavbleRoomsByTypeGrid.classList.add( 'hidden' );
-    roomTypesDiv.classList.add('hidden')
-    loadData( )
+    roomTypesDiv.classList.add('hidden');
+    loadData( );
 }
+
+
+function checkCustomerIsValidOnLogin( event ) {
+    event.preventDefault( );
+    customerLoginInfo = new FormData( event.target ); 
+    if ( checkCustomerIsValid( customerLoginInfo.get( 'username' ) ) && customerLoginInfo.get( 'password' ) === 'overlook2021' ) {
+        fetch( `http://localhost:3001/api/v1/customers/${ checkCustomerIsValid( customerLoginInfo.get( 'username' ) ) }` )
+        .then( response => response.json( ) )
+        .then( response => {
+            whosTheCustomer( response ) 
+            console.log('RESPONSE for VALID USER: ', response)
+            loadData( response ) 
+            currentCustomer = new Customer( response );
+            console.log('CURRENT CUSTOMER after VALID LOGIN: ', currentCustomer)
+        } )
+        .catch( error => console.log( error ) )
+    }
+}
+
+function checkCustomerIsValid( userName ) {
+    let customer = userName.substring( 0, 8 );
+    let customerId = userName.substring( 8 );
+        if ( customer === 'customer' && parseInt( customerId ) < 51 ) {
+            return customerId
+        } else {
+            return false
+        };
+}
+
+function whosTheCustomer( listOfCustomers ) {
+    console.log('LISTOFCUSTOMERS: ', listOfCustomers)
+    let stuff = new Customer( listOfCustomers );
+    console.log('STUFF: ', stuff)
+    return stuff
+}
+
