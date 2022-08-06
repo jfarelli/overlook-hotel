@@ -4,7 +4,6 @@ class Hotel {
         this.allRooms = roomsData;
         this.allBookings = bookingsData;
         this.roomAvailability = [ ];
-        // have a currentUser...maybe??
     };
 
     checkAvailabilityByDate( date ) { 

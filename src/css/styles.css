@@ -3,7 +3,6 @@
 }
 
 html, body {
-  /* background: rgb(98, 160, 253); */
   height: 100%;
   width: 100%;
   margin: 0;
@@ -13,7 +12,6 @@ html, body {
 h1 {
   margin: 4px;
   font-size: 20px;
-  /* transform: rotate(45deg); */
 }
 
 h3 {
@@ -78,12 +76,9 @@ button:active {
 }
 
 .top-bar {
-  /* background: linear-gradient(360deg, rgba(0, 0, 0, 0.7), rgb(246, 132, 45)); */
   background: rgb(246, 132, 45);
   display: grid;
-  /* align-items: baseline; */
   width: 100%;
-  /* border-bottom: 2px solid white; */
 }
 
 .welcome {
@@ -92,14 +87,12 @@ button:active {
 }
 
 .welcome-message {
-  /* border: 1px solid rgb(0, 187, 255); */
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   margin-top: 0;
   margin-bottom: 5px;
-  /* padding-bottom: 10px; */
   font-size: 50px;
 }
 
@@ -124,9 +117,6 @@ button:active {
   flex-direction: column;
   align-items: flex-start;
   margin: 0;
-  /* justify-content:flex-start; */
-  /* margin: 0 0 80px 10px; */
-  /* margin-bottom: 20px; */
 }
 
 .calendar {
@@ -137,17 +127,11 @@ button:active {
   position:absolute;
   right: 5%;
   margin-top: 10px;
-  /* margin-bottom: 10px; */
 }
 
 .calendar-entry {
   margin-bottom: 3px;
 }
-
-/* .room-types {
-  display: flex;
-  align-items: center;
-} */
 
 .room-details {
   text-align: center;
@@ -187,18 +171,12 @@ button:active {
   object-fit: cover;
 }
 
-/* .booking-date {
-  margin: 0;
-} */
-
 .booking-room-type {
   margin: 0;
   margin-top: 5px;
-  /* background: rgba(0, 0, 0, 0.1); */
 }
 
 .booking-cost {
-  /* margin: 0; */
   margin-top: 15px;
 }
 
@@ -209,8 +187,6 @@ button:active {
 #mainLoginHolder {
   width: 100%;
   height: 100%;
-  /* background-color: white; */
-  /* background: rgb(42, 136, 56); */
   background-image: linear-gradient(to left, rgb(222, 217, 217), rgba(246, 132, 45, .9));
   font-variant: small-caps;
   border-radius: 7px;
@@ -265,7 +241,6 @@ button:active {
 
 #loginFormSubmit:hover {
   cursor: pointer;
-  /* background-color: rgb(39, 142, 194) */
 }
 
 #loginFormSubmit:active {
