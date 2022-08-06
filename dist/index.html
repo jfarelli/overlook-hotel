@@ -12,10 +12,12 @@
   <div id="mainLoginHolder">
     <h1 class="login-text">Login to your profile</h1>
     <form id="loginForm">
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" required>
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password"
+      <label for="userNameField" class="user-name-label">Username Input</label>
+      <input type="text" name="username" id="userNameField" class="login-form-field" placeholder="Username" required>
+      <label for="passwordField" class="password-label">Password Input</label>
+      <input type="password" name="password" id="passwordField" class="login-form-field" value="overlook2021"
         required>
-      <input type="submit" value="Let's Book A Room!" id="loginFormSubmit">
+      <input type="submit" value="Get A Room!" id="loginFormSubmit">
     </form>
   </div>
   <div class="grid-container hidden">
@@ -25,17 +27,15 @@
         <div class="welcome-message-and-total-cost">
           <h2 class="welcome-message"></h2>
           <p class="total-rooms-cost">
+            <div class="return-button">
+              <button class="return-home hidden">Return Home</button>
+            </div>
           <p>
-        </div>
-        <div class="return-button">
-          <button class="return-home hidden">Return Home</button>
         </div>
       </div>
       <form class="calendar">
         <label for="select">Book Your Next Room!</label>
         <input type="date" id="select" class="calendar-entry" name="select-date" required>
-        <label for="roomNumber"></label>
-        <input type="number" id="roomNumber" class="room-number hidden" name="select-room-number" required>
         <div class="room-types hidden" id="roomType">
           <label for="roomTypeDropDown"></label>
           <select type="dropdown" id="roomTypeDropDown" name="type" class="room-details">

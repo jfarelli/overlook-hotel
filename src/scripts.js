@@ -1,4 +1,5 @@
 import './images/hotel-room.jpg'
+import './images/overlook.jpg'
 import './css/styles.css';
 import { getData } from './apiCalls';
 import { postData } from './apiCalls';
@@ -70,14 +71,20 @@ function loadData( ) {
 
 
 function displayCustomersBookingHistory( ) {
+    availavbleRoomsByDateGrid.innerHTML = '';
+    availavbleRoomsByTypeGrid.innerHTML = '';
+    bookingHistoryDisplay.innerHTML = '';
+    availavbleRoomsByDateGrid.classList.add( 'hidden' );
+    availavbleRoomsByTypeGrid.classList.add( 'hidden' );
+    bookingHistoryDisplay.classList.remove( 'hidden' );
     welcomeMessage.innerText = `Welcome, ${ currentCustomer.name }!`;
     currentCustomer.getCustomersBookingHistory( listOfBookings, listOfRooms );
-    customerRoomsTotalCost.innerHTML = `Lifetime Booking Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
+    customerRoomsTotalCost.innerHTML = `Lifetime Bookings Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
     return currentCustomer.customerBookingHistory.map( booking => {
-        bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`
+        bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your bookings history.`
         bookingHistoryDisplay.innerHTML += 
             `<section class="grid-item grid-item-1">
-                <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-image">
+                <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-room-image">
                 <p class="booking-date">${ dayjs( booking.date ).format( "MMMM D, YYYY" ) }</p>
                 <p class="booking-room-type">${ booking.roomDetails.roomType.toLowerCase( )
                 .split(' ')
@@ -92,15 +99,14 @@ function displayCustomersBookingHistory( ) {
 function getAvailableRoomsByDate( e ) {
     e.preventDefault( );
     availavbleRoomsByDateGrid.innerHTML = '';
-    bookingHistoryDisplay.classList.add( 'hidden' );
-    availavbleRoomsByTypeGrid.classList.add( 'hidden' );
+    availavbleRoomsByTypeGrid.innerHTML = '';
     returnHomeButton.classList.remove( 'hidden' );
+    bookingHistoryDisplay.classList.add( 'hidden' );
     availavbleRoomsByDateGrid.classList.remove( 'hidden' );
+    availavbleRoomsByTypeGrid.classList.add( 'hidden' );
     roomTypesDiv.classList.remove('hidden')
     roomTypeDropDownMenu += `<option value="${ roomTypeDropDownMenu.value }">${ roomTypeDropDownMenu.value }</option>`
     hotel.checkAvailabilityByDate( e.target.value )
-    console.log('HOTEL.ROOMAVAILABILITY.LENGTH: ', hotel.roomAvailability.length)
-
     if( !hotel.roomAvailability.length ) {
         bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there's no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
     } else {
@@ -108,7 +114,7 @@ function getAvailableRoomsByDate( e ) {
             bookingHitsoryTitleText.innerText = `There are ${ hotel.roomAvailability.length } rooms available on ${ dayjs( e.target.value ).format( "MMMM D, YYYY" ) }`;  
             availavbleRoomsByDateGrid.innerHTML += 
             `<section class="grid-item grid-item-1">
-                <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-image">
+                <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-room-image"">
                 <p class="booking-date">${ availableRoom.roomType.toLowerCase( )
                     .split(' ')
                     .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
@@ -123,7 +129,8 @@ function getAvailableRoomsByDate( e ) {
 
 
 function filterAvailableRoomsByRoomTypeOnPage( e ){
-    availavbleRoomsByTypeGrid.innerHTML = ''
+    availavbleRoomsByDateGrid.innerHTML = '';
+    availavbleRoomsByTypeGrid.innerHTML = '';
     availavbleRoomsByDateGrid.classList.add( 'hidden' );
     availavbleRoomsByTypeGrid.classList.remove( 'hidden' );
     const filteredRoomsByType = hotel.filterAvailableRoomsByType( e.target.value );
@@ -134,7 +141,7 @@ function filterAvailableRoomsByRoomTypeOnPage( e ){
                 .join(' ') }s Available on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }`;  
             availavbleRoomsByTypeGrid.innerHTML += 
             `<section class="grid-item grid-item-1">
-                <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-image">
+                <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-room-image">
                 <p class="booking-date">${ availableRoom.roomType.toLowerCase( )
                     .split(' ')
                     .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
@@ -173,6 +180,7 @@ function bookAvailableRoom( e ) {
 
 
 function returnHome( ){
+    
     bookingHistoryDisplay.classList.remove( 'hidden' );
     availavbleRoomsByDateGrid.classList.add( 'hidden' );
     availavbleRoomsByTypeGrid.classList.add( 'hidden' );

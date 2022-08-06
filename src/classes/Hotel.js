@@ -29,23 +29,3 @@ class Hotel {
 }
 
 export default Hotel;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// saveBookings( bookingsData ) {
-//     console.log('BOOKINGSDATA: ', bookingsData)
-//     return bookingsData.map( booking => {
-//         return new Booking( booking )
-//     } )
-// }
