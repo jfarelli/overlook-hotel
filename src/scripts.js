@@ -61,12 +61,12 @@ function loadData( ) {
         listOfRooms = data[ 1 ].rooms;
         listOfBookings = data[ 2 ].bookings;
         hotel = new Hotel( listOfCustomers, listOfRooms, listOfBookings )
-        displayCustomersBookingHistory( );
+        displayCustomerBookingHistory( );
         } );
 }
 
 
-function displayCustomersBookingHistory( ) {
+function displayCustomerBookingHistory( ) {
     availavbleRoomsByDateGrid.innerHTML = '';
     availavbleRoomsByTypeGrid.innerHTML = '';
     bookingHistoryDisplay.innerHTML = '';
@@ -74,9 +74,10 @@ function displayCustomersBookingHistory( ) {
     availavbleRoomsByTypeGrid.classList.add( 'hidden' );
     bookingHistoryDisplay.classList.remove( 'hidden' );
     welcomeMessage.innerText = `Welcome, ${ currentCustomer.name }!`;
-    currentCustomer.getCustomersBookingHistory( listOfBookings, listOfRooms );
+    currentCustomer.getCustomerBookingHistory( listOfBookings, listOfRooms );
     customerRoomsTotalCost.innerHTML = `Lifetime Bookings Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
     return currentCustomer.customerBookingHistory.map( booking => {
+        console.log('BOOKING: ', booking)
         bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`
         bookingHistoryDisplay.innerHTML += 
             `<section class="grid-item grid-item-1">
@@ -86,6 +87,7 @@ function displayCustomersBookingHistory( ) {
                 .split(' ')
                 .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
                 .join(' ') }</p>
+                <p class="booking-bed-size">${ booking.roomDetails.bedSize.charAt( 0 ).toUpperCase( ) + booking.roomDetails.bedSize.slice( 1 ) } Bed ( ${ booking.roomDetails.numBeds } )</p>
                 <p class="booking-cost">Room Cost: $${ booking.roomDetails.costPerNight }</p>
             </section>`
     } )
@@ -107,6 +109,7 @@ function getAvailableRoomsByDate( e ) {
         bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there's no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
     } else {
         hotel.roomAvailability.forEach( availableRoom => {
+            console.log('AVAILABLE: ', availableRoom)
             bookingHitsoryTitleText.innerText = `There are ${ hotel.roomAvailability.length } rooms available on ${ dayjs( e.target.value ).format( "MMMM D, YYYY" ) }`;  
             availavbleRoomsByDateGrid.innerHTML += 
             `<section class="grid-item grid-item-1">
@@ -115,7 +118,7 @@ function getAvailableRoomsByDate( e ) {
                     .split(' ')
                     .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
                     .join(' ') }</p>
-                <p class="booking-room-type">${ availableRoom.bedSize.charAt( 0 ).toUpperCase( ) + availableRoom.bedSize.slice( 1 ) } Bed</p>
+                <p class="booking-room-type">${ availableRoom.bedSize.charAt( 0 ).toUpperCase( ) + availableRoom.bedSize.slice( 1 ) } Bed ( ${ availableRoom.numBeds } )</p>
                 <p class="booking-cost">Room Cost: $${ availableRoom.costPerNight }</p>
                 <input type="submit" value="Book It!" name="select-booking" class="submit-button" id="${ availableRoom.number }"></input>
             </section>`  
@@ -142,7 +145,7 @@ function filterAvailableRoomsByRoomTypeOnPage( e ){
                     .split(' ')
                     .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
                     .join(' ') }</p>
-                <p class="booking-room-type">${ availableRoom.bedSize.charAt( 0 ).toUpperCase( ) + availableRoom.bedSize.slice( 1 ) } Bed</p>
+                <p class="booking-room-type">${ availableRoom.bedSize.charAt( 0 ).toUpperCase( ) + availableRoom.bedSize.slice( 1 )  } Bed ( ${ availableRoom.numBeds } )</p>
                 <p class="booking-cost">Room Cost: $${ availableRoom.costPerNight }</p>
                 <input type="submit" value="Book It!" name="submit-button" class="submit-button" id="${ availableRoom.number }"></input>
             </section>`

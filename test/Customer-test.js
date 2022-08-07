@@ -8,22 +8,16 @@ import roomsData from '../src/sample-data/rooms-sample-data';
 
 describe( 'Customer', ( ) => {
 
-  let customer1;
-  let customer2;
-  
   let bookingData;
 
-  let booking1;
-  let booking2;
+  let customer1;
+  let customer2;
 
   beforeEach( ( ) => {
-    bookingData = bookingsData.map( booking => new Booking( booking ) )
+    bookingData = bookingsData.map( booking => new Booking( booking ) );
    
     customer1 = new Customer( customersData[ 0 ] );
     customer2 = new Customer( customersData[ 1 ] );
-
-    booking1 = new Booking( bookingData[ 0 ] );
-    booking2 = new Booking( bookingData[ 4 ] );
 
   } );
 
@@ -62,7 +56,7 @@ describe( 'Customer', ( ) => {
   } );
 
   it( 'Should get the Customer\'s Booking HISTORY', ( ) => {
-    customer1.getCustomersBookingHistory( bookingData, roomsData );
+    customer1.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer1.customerBookingHistory ).to.be.a( "array" );
     expect( customer1.customerBookingHistory ).to.deep.equal
       ( 
@@ -126,7 +120,7 @@ describe( 'Customer', ( ) => {
         ] 
       );
 
-    customer2.getCustomersBookingHistory( bookingData, roomsData )
+    customer2.getCustomerBookingHistory( bookingData, roomsData )
     expect( customer2.customerBookingHistory ).to.be.a( "array" );
     expect( customer2.customerBookingHistory ).to.deep.equal
       ( 
@@ -178,11 +172,11 @@ describe( 'Customer', ( ) => {
   } );
 
   it( 'Should get the TOTAL COST of Customer\'s Booking HISTORY', ( ) => {
-    customer1.getCustomersBookingHistory( bookingData, roomsData );
+    customer1.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.be.a( "string" );
     expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1,685.32' );
 
-    customer2.getCustomersBookingHistory( bookingData, roomsData );
+    customer2.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.be.a( "string" );
     expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1,326.92' );
   } );
