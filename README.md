@@ -44,6 +44,13 @@ https://user-images.githubusercontent.com/97558758/183264344-b77b443b-96fa-4dc4-
 
 https://user-images.githubusercontent.com/97558758/183264356-d90b1f90-3988-4cb3-ac89-97e4c5f7a049.mov
 
+* Customer Login Error Handling:
+
+https://user-images.githubusercontent.com/97558758/183301718-c0c0fa5f-fc86-40f4-8500-416e187634b3.mov
+
+* No Room Availavility Error Handling: 
+
+https://user-images.githubusercontent.com/97558758/183301900-7b1a9d6d-605d-4c99-b1e3-af26139e9240.mov
 
 
 <br>
