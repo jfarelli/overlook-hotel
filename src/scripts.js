@@ -197,7 +197,7 @@ function checkCustomerIsValidOnLogin( event ) {
         } )
         .catch( error => console.log( error ) )
     } else {
-        window.alert( 'Invalid Username, or Login' );
+        window.alert( 'Invalid Username, or Password' );
         event.target.reset( )
     }
 }
