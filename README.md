@@ -5,8 +5,8 @@
 ### Table of contents
 * [Setting Up](#setup)
 * [How To Use](#how)
-* [Challenges](#challenges)
-* [Reflections](#reflections)
+* [Error Handling](#error)
+* [Challenges & Reflections](#challenges)
 * [Future Iterations](#future)
 * [Technologies Used](#tech)
 * [Contributors](#contributors)
@@ -44,6 +44,8 @@ https://user-images.githubusercontent.com/97558758/183264344-b77b443b-96fa-4dc4-
 
 https://user-images.githubusercontent.com/97558758/183264356-d90b1f90-3988-4cb3-ac89-97e4c5f7a049.mov
 
+### Error Handling: <a name="error"></a>
+
 * Customer Login Error Handling:
 
 https://user-images.githubusercontent.com/97558758/183302050-0efffb9d-992f-4f2b-a0c1-fb6c6875779f.mov
@@ -57,13 +59,10 @@ https://user-images.githubusercontent.com/97558758/183301900-7b1a9d6d-605d-4c99-
 
 
 
-### Challenges: <a name="challenges"></a>
-* What stumped you during this project and how did you overcome it?
-
-<br>
-
-### Reflections: <a name="reflections"></a>
-* This
+### Challenges & Reflections: <a name="challenges"></a>
+* This project was a challenge, as I dealt with fetching API data from the server and also enabling the ability to POST a new Room booking for the Customer. 
+* Above that was creating a login page, linking that login to the user, and then displaying that user's trips. I've only done this once before, so it was nice to get more practice.
+* After deveoping my class files, referencing countless ways to overcome an error, getting help from fellow developers, repeating these previous steps over and over, and riding that emotional rollercoaster I came out the otherside with a product that I'm both proud of, and learned a great deal from.
 
 <br>
 
@@ -79,7 +78,7 @@ https://user-images.githubusercontent.com/97558758/183301900-7b1a9d6d-605d-4c99-
 JavaScript<br>
 HTML<br>
 CSS<br>
-Fetch API<br>
+GET & POST API Data<br>
 Webpack<br>
 Mocha<br>
 Chai<br>
