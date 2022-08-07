@@ -1,31 +1,16 @@
-// import chai from 'chai';
 import { expect } from 'chai'; 
-import Booking from '../src/classes/Booking';
-import Customer from '../src/classes/Customer'; 
-import Room from '../src/classes/Room';
 import Hotel from '../src/classes/Hotel';
 import bookingsData from '../src/sample-data/bookings-sample-data';
 import customersData from '../src/sample-data/customers-sample-data';
 import roomsData from '../src/sample-data/rooms-sample-data';
 
 describe( 'Hotel', ( ) => {
-    let customer1;
 
-    let booking1;
-
-    let room1;
-
-    let hotel1;
+    let hotel;
 
     beforeEach( ( ) => {
-        
-        customer1 = new Customer( customersData[ 0 ] );
 
-        booking1 = new Booking( bookingsData[ 0 ] );
-
-        room1 = new Room( roomsData[ 0 ] );
-
-        hotel1 = new Hotel( customersData, roomsData, bookingsData  )
+        hotel = new Hotel( customersData, roomsData, bookingsData  )
 
     } );
 
@@ -34,33 +19,33 @@ describe( 'Hotel', ( ) => {
     } );
     
     it( 'Should be an instance of Hotel', ( ) => {
-        expect( hotel1 ).to.be.an.instanceOf( Hotel );
+        expect( hotel ).to.be.an.instanceOf( Hotel );
     } );
     
-    it( 'Should store all Rooms in the Hotel', ( ) => {
-        expect( hotel1.allRooms ).to.be.a( "array" );
-        expect( hotel1.allRooms ).to.equal( roomsData );
+    it( 'Should store all Room Dat in the Hotel', ( ) => {
+        expect( hotel.allRooms ).to.be.a( "array" );
+        expect( hotel.allRooms ).to.equal( roomsData );
     } ); 
     
-    it( 'Should store all Bookings in the Hotel', ( ) => {
-        expect( hotel1.allRooms ).to.be.a( "array" );
-        expect( hotel1.allBookings).to.equal( bookingsData );
+    it( 'Should store all Booking Data in the Hotel', ( ) => {
+        expect( hotel.allRooms ).to.be.a( "array" );
+        expect( hotel.allBookings).to.equal( bookingsData );
     } ); 
 
     it( 'Should store all Customer Data in the Hotel', ( ) => {
-        expect( hotel1.allRooms ).to.be.a( "array" );
-        expect( hotel1.allCustomers).to.equal( customersData );
+        expect( hotel.allRooms ).to.be.a( "array" );
+        expect( hotel.allCustomers).to.equal( customersData );
     } ); 
 
     it( 'Should store available Rooms in the Hotel', ( ) => {
-        expect( hotel1.roomAvailability).to.be.a( "array" );
-        expect( hotel1.roomAvailability).to.deep.equal( [ ] );
+        expect( hotel.roomAvailability).to.be.a( "array" );
+        expect( hotel.roomAvailability).to.deep.equal( [ ] );
     } ); 
 
     it( 'Should check Room Availability', ( ) => {
-        hotel1.checkAvailabilityByDate( "2022/01/24" )
-        expect( hotel1.roomAvailability).to.be.a( "array" );
-        expect( hotel1.roomAvailability).to.deep.equal
+        hotel.checkAvailabilityByDate( "2022/01/24" )
+        expect( hotel.roomAvailability).to.be.a( "array" );
+        expect( hotel.roomAvailability).to.deep.equal
             ( 
                 [
                     {
@@ -89,9 +74,9 @@ describe( 'Hotel', ( ) => {
                     }
                 ]
             );
-        hotel1.checkAvailabilityByDate( "2022/02/16" )
-        expect( hotel1.roomAvailability).to.be.a( "array" );
-        expect( hotel1.roomAvailability).to.deep.equal
+        hotel.checkAvailabilityByDate( "2022/02/16" )
+        expect( hotel.roomAvailability).to.be.a( "array" );
+        expect( hotel.roomAvailability).to.deep.equal
             ( 
                 [
                     {
@@ -131,9 +116,9 @@ describe( 'Hotel', ( ) => {
     } ); 
 
     it( 'Should filter available Rooms in the Hotel by TYPE', ( ) => {
-        hotel1.checkAvailabilityByDate( "2022/01/24" )
-        expect( hotel1.filterAvailableRoomsByType( 'suite' ) ).to.be.a( "array" );
-        expect( hotel1.filterAvailableRoomsByType( 'suite' ) ).to.deep.equal
+        hotel.checkAvailabilityByDate( "2022/01/24" )
+        expect( hotel.filterAvailableRoomsByType( 'suite' ) ).to.be.a( "array" );
+        expect( hotel.filterAvailableRoomsByType( 'suite' ) ).to.deep.equal
             (  
                 [
                     {
@@ -147,9 +132,9 @@ describe( 'Hotel', ( ) => {
                   ]
             );
         
-        hotel1.checkAvailabilityByDate( "2022/02/16" )
-        expect( hotel1.filterAvailableRoomsByType( 'single room' ) ).to.be.a( "array" );
-        expect( hotel1.filterAvailableRoomsByType( 'single room' ) ).to.deep.equal
+        hotel.checkAvailabilityByDate( "2022/02/16" )
+        expect( hotel.filterAvailableRoomsByType( 'single room' ) ).to.be.a( "array" );
+        expect( hotel.filterAvailableRoomsByType( 'single room' ) ).to.deep.equal
             (  
                 [
                     {

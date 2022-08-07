@@ -14,6 +14,11 @@ class Customers {
         this.customerBookingHistory.forEach( booking => {
             booking.getRoomDetailsFromBookings( roomsData )
         } )
+        this.customerBookingHistory.sort( (a, b) => {
+            a = a.date.split('/');
+            b = b.date.split('/');
+            return a[0] - b[0] || a[1] - b[1] || a[2] - b[2];
+        });
     }
 
     getTotalCostOfRoomsForCustomer( ) {

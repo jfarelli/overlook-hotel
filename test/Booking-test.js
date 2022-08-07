@@ -1,4 +1,3 @@
-// import chai from 'chai';
 import { expect } from 'chai'; 
 import Booking from '../src/classes/Booking'; 
 import Room from '../src/classes/Room';
@@ -62,12 +61,12 @@ describe( 'Booking', ( ) => {
 
   it( 'Should match Booking to Room', ( ) => {
     booking1.getRoomDetailsFromBookings( roomsData );
-    expect(booking1.roomDetails).to.be.a.instanceOf( Room );
-    expect(booking1.roomDetails.number).to.equal( 1 );
+    expect( booking1.roomDetails ).to.be.a.instanceOf( Room );
+    expect( booking1.roomDetails.number ).to.equal( 1 );
 
     booking2.getRoomDetailsFromBookings( roomsData );
-    expect(booking2.roomDetails).to.be.a.instanceOf( Room );
-    expect(booking2.roomDetails.number).to.equal( 2 );
+    expect( booking2.roomDetails ).to.be.a.instanceOf( Room );
+    expect( booking2.roomDetails.number ).to.equal( 2 );
   } );
 
 } );

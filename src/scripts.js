@@ -20,7 +20,6 @@ let currentCustomer;
 let customerLoginInfo;
 
 
-let loginForm = document.getElementById( 'loginForm' );
 let calendarInput = document.getElementById( 'select' );
 let roomTypesDiv = document.getElementById( 'roomType' );
 let loginWindow = document.getElementById( 'mainLoginHolder' );
@@ -37,20 +36,17 @@ let availableRoomsByDateGridContainer = document.getElementById( 'availableRooms
 let availableRoomsByTypeGridContainer = document.getElementById( 'availableRoomsByTypeGrid' );
 
 
-// ============================ EVENT LISTENERS ======================================
 returnHomeButton.addEventListener( 'click', returnHome );
 calendarInput.addEventListener( 'change', getAvailableRoomsByDate );
-loginForm.addEventListener( 'submit', checkCustomerIsValidOnLogin );
+document.getElementById( 'loginForm' ).addEventListener( 'submit', checkCustomerIsValidOnLogin );
 roomTypeDropDownMenu.addEventListener( 'change', filterAvailableRoomsByRoomTypeOnPage )
-
 availableRoomsByDateGridContainer.addEventListener( 'click', ( e ) => {
     if ( e.target.classList == 'submit-button' ){        
         return bookAvailableRoom( e );
     }
 } )
-
 availableRoomsByTypeGridContainer.addEventListener( 'click', ( e ) => {
-    if( e.target.classList == 'submit-button' ){
+    if ( e.target.classList == 'submit-button' ){
         return bookAvailableRoom( e );
     }
 } )
@@ -81,7 +77,7 @@ function displayCustomersBookingHistory( ) {
     currentCustomer.getCustomersBookingHistory( listOfBookings, listOfRooms );
     customerRoomsTotalCost.innerHTML = `Lifetime Bookings Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
     return currentCustomer.customerBookingHistory.map( booking => {
-        bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your bookings history.`
+        bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`
         bookingHistoryDisplay.innerHTML += 
             `<section class="grid-item grid-item-1">
                 <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-room-image">
@@ -107,7 +103,7 @@ function getAvailableRoomsByDate( e ) {
     roomTypesDiv.classList.remove('hidden')
     roomTypeDropDownMenu += `<option value="${ roomTypeDropDownMenu.value }">${ roomTypeDropDownMenu.value }</option>`
     hotel.checkAvailabilityByDate( e.target.value )
-    if( !hotel.roomAvailability.length ) {
+    if ( !hotel.roomAvailability.length ) {
         bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there's no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
     } else {
         hotel.roomAvailability.forEach( availableRoom => {
@@ -180,7 +176,6 @@ function bookAvailableRoom( e ) {
 
 
 function returnHome( ){
-    
     bookingHistoryDisplay.classList.remove( 'hidden' );
     availavbleRoomsByDateGrid.classList.add( 'hidden' );
     availavbleRoomsByTypeGrid.classList.add( 'hidden' );
