@@ -34,7 +34,7 @@ https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-
 
 * Customer Display:
 
-https://user-images.githubusercontent.com/97558758/183460178-b5e8fcdb-8be2-4824-997b-b9792ef8e60e.mov
+https://user-images.githubusercontent.com/97558758/183460452-b2936622-6801-496e-a7f0-5ab9c1605c73.mov
 
 * Filter by Date and Room Type
 
