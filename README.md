@@ -33,32 +33,45 @@
 https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-b319-d9088f8c2019.mov
 
 * Customer Display:
+    * The Customer is presented with a display that welcomes them and shows their total spent on room bookings.
+    * The Customer is also presented with a message saying how many rooms they have in their booking history, and a display of all their past and future trips organized by date.
 
 https://user-images.githubusercontent.com/97558758/183460452-b2936622-6801-496e-a7f0-5ab9c1605c73.mov
 
 * Filter by Date and Room Type:
+    * The calendar at the top-right of the page allows you to filter available rooms by date.
+    * Once a date is selected a drop-down menu appears to further filter those room by room type.
 
 https://user-images.githubusercontent.com/97558758/183460821-89536cdf-5746-4521-8557-d4fb829a85a4.mov
 
 * Book a Room:
+    * After the Customer has filtered available rooms, they can now select a room for booking by clicking the "Book It!" button that appears.
+    * After the "Book It!" button is clicked the user will be shown an alert that confirms their room has been booked for the date selected.
 
 https://user-images.githubusercontent.com/97558758/183460960-02d31d8b-ac4a-41a1-bbab-5bf474ef0ecd.mov
 
 * Return Home and See Added Booking:
+    * The Customer can click the "Return Home" button at anytime to go back to their main page.
+    * If the "Return Home" button is clicked after a successful booking, the Customer will be returned home and their "Lifetime Booking Total" will be updated.
+    * The new booking will be placed in the Customer's booking history.
 
 https://user-images.githubusercontent.com/97558758/183461109-49e37e18-4ff5-4892-b998-c887843dd695.mov
 
 ### Error Handling: <a name="error"></a>
 
 * Customer Login Error Handling:
+    * If the Customer enters an invalid Username, or Password, they will be presented with an alert notifying them.
+    * Upon clicking the "OK" button on the alert, the login form will reset and they can try again.
 
 https://user-images.githubusercontent.com/97558758/183461191-7095cbd0-ce6a-4a8d-a4b9-efda68016e73.mov
 
 * No Room Availavility  by DATE Error Handling: 
+    * If there are no available rooms on the date selected by the Customer, a message will appear on the screen notifying the Customer.
 
 https://user-images.githubusercontent.com/97558758/183461265-25e4b92a-541f-4580-a8ce-432edc6c92a2.mov
 
 * No Room Availavility  by Room TYPE Error Handling: 
+    * If there are no available room types on the date selected by the Customer, a message will appear on the screen notifying the Customer.
 
 https://user-images.githubusercontent.com/97558758/183461274-f29ec3d9-f156-4590-aff5-1dbf1ebf8687.mov
 
