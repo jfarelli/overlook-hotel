@@ -1,4 +1,3 @@
-// import chai from 'chai';
 import { expect } from 'chai'; 
 import Booking from '../src/classes/Booking';
 import Customer from '../src/classes/Customer'; 
@@ -33,18 +32,18 @@ describe( 'Customer', ( ) => {
 
   it( 'Should take in a Customer\'s ID', ( ) => {
     expect( customer1.id ).to.be.a( "number" );
-    expect( customer1.id ).to.equal( customersData[0].id );
+    expect( customer1.id ).to.equal( customersData[ 0 ].id );
 
     expect( customer2.id ).to.be.a( "number" );
-    expect( customer2.id ).to.equal( customersData[1].id );
+    expect( customer2.id ).to.equal( customersData[ 1 ].id );
   } );
 
   it( 'Should take in a Customer\'s NAME', ( ) => {
     expect( customer1.name ).to.be.a( "string" );
-    expect( customer1.name ).to.equal( customersData[0].name );
+    expect( customer1.name ).to.equal( customersData[ 0 ].name );
 
     expect( customer2.name ).to.be.a( "string" );
-    expect( customer2.name ).to.equal( customersData[1].name );
+    expect( customer2.name ).to.equal( customersData[ 1 ].name );
   } );
 
   it( 'Should be able to store a Customer\'s Booking HISTORY', ( ) => {
@@ -120,7 +119,7 @@ describe( 'Customer', ( ) => {
         ] 
       );
 
-    customer2.getCustomerBookingHistory( bookingData, roomsData )
+    customer2.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer2.customerBookingHistory ).to.be.a( "array" );
     expect( customer2.customerBookingHistory ).to.deep.equal
       ( 

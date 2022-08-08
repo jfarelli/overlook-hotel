@@ -10,12 +10,12 @@ describe( 'Hotel', ( ) => {
 
     beforeEach( ( ) => {
 
-        hotel = new Hotel( customersData, roomsData, bookingsData  )
+        hotel = new Hotel( customersData, roomsData, bookingsData  );
 
     } );
 
     it( 'Should be a function', ( ) => {
-      expect( Hotel ).to.be.a('function');
+      expect( Hotel ).to.be.a( 'function' );
     } );
     
     it( 'Should be an instance of Hotel', ( ) => {
@@ -74,7 +74,7 @@ describe( 'Hotel', ( ) => {
                     }
                 ]
             );
-        hotel.checkAvailabilityByDate( "2022/02/16" )
+        hotel.checkAvailabilityByDate( "2022/02/16" );
         expect( hotel.roomAvailability).to.be.a( "array" );
         expect( hotel.roomAvailability).to.deep.equal
             ( 
@@ -116,7 +116,7 @@ describe( 'Hotel', ( ) => {
     } ); 
 
     it( 'Should filter available Rooms in the Hotel by TYPE', ( ) => {
-        hotel.checkAvailabilityByDate( "2022/01/24" )
+        hotel.checkAvailabilityByDate( "2022/01/24" );
         expect( hotel.filterAvailableRoomsByType( 'suite' ) ).to.be.a( "array" );
         expect( hotel.filterAvailableRoomsByType( 'suite' ) ).to.deep.equal
             (  
@@ -132,7 +132,7 @@ describe( 'Hotel', ( ) => {
                   ]
             );
         
-        hotel.checkAvailabilityByDate( "2022/02/16" )
+        hotel.checkAvailabilityByDate( "2022/02/16" );
         expect( hotel.filterAvailableRoomsByType( 'single room' ) ).to.be.a( "array" );
         expect( hotel.filterAvailableRoomsByType( 'single room' ) ).to.deep.equal
             (  

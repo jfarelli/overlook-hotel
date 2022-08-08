@@ -7,15 +7,12 @@ class Booking {
        this.date = bookingsData.date;
        this.roomNumber = bookingsData.roomNumber;
        this.roomDetails;
-    };
-
-    getRoomDetailsFromBookings( roomsData ) {
-        let roomAndBookingMatch = roomsData.find( room => room.number === this.roomNumber )
-        this.roomDetails = new Room( roomAndBookingMatch )
     }
 
-
-
+    getRoomDetailsFromBookings( roomsData ) {
+        let roomAndBookingMatch = roomsData.find( room => room.number === this.roomNumber );
+        this.roomDetails = new Room( roomAndBookingMatch );
+    }
 }
 
 

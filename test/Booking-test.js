@@ -17,7 +17,7 @@ describe( 'Booking', ( ) => {
   } );
 
   it( 'Should be a function', ( ) => {
-    expect( Booking ).to.be.a('function');
+    expect( Booking ).to.be.a( 'function' );
   } );
 
   it( 'Should be an instance of User', ( ) => {

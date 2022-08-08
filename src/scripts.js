@@ -1,5 +1,5 @@
-import './images/hotel-room.jpg'
-import './images/overlook.jpg'
+import './images/hotel-room.jpg';
+import './images/overlook.jpg';
 import './css/styles.css';
 import { getData } from './apiCalls';
 import { postData } from './apiCalls';
@@ -7,7 +7,6 @@ import Booking from '../src/classes/Booking';
 import Customer from '../src/classes/Customer';
 import Hotel from './classes/Hotel';
 import dayjs from 'dayjs';
-dayjs( ).format( );
 
 
 let hotel;
@@ -39,18 +38,17 @@ let availableRoomsByTypeGridContainer = document.getElementById( 'availableRooms
 returnHomeButton.addEventListener( 'click', returnHome );
 calendarInput.addEventListener( 'change', getAvailableRoomsByDate );
 document.getElementById( 'loginForm' ).addEventListener( 'submit', checkCustomerIsValidOnLogin );
-roomTypeDropDownMenu.addEventListener( 'change', filterAvailableRoomsByRoomTypeOnPage )
+roomTypeDropDownMenu.addEventListener( 'change', filterAvailableRoomsByRoomTypeOnPage );
 availableRoomsByDateGridContainer.addEventListener( 'click', ( e ) => {
     if ( e.target.classList == 'submit-button' ){        
         return bookAvailableRoom( e );
     }
-} )
+} );
 availableRoomsByTypeGridContainer.addEventListener( 'click', ( e ) => {
     if ( e.target.classList == 'submit-button' ){
         return bookAvailableRoom( e );
     }
-} )
-
+} );
 
 
 function loadData( ) {
@@ -60,7 +58,7 @@ function loadData( ) {
         listOfCustomers = data[ 0 ].customers;
         listOfRooms = data[ 1 ].rooms;
         listOfBookings = data[ 2 ].bookings;
-        hotel = new Hotel( listOfCustomers, listOfRooms, listOfBookings )
+        hotel = new Hotel( listOfCustomers, listOfRooms, listOfBookings );
         displayCustomerBookingHistory( );
         } );
 }
@@ -77,7 +75,7 @@ function displayCustomerBookingHistory( ) {
     currentCustomer.getCustomerBookingHistory( listOfBookings, listOfRooms );
     customerRoomsTotalCost.innerHTML = `Lifetime Bookings Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
     return currentCustomer.customerBookingHistory.map( booking => {
-        bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`
+        bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`;
         bookingHistoryDisplay.innerHTML += 
             `<section class="grid-item grid-item-1">
                 <img class= "hotel-image" src='./images/hotel-room.jpg' alt="hotel-room-image">
@@ -89,7 +87,7 @@ function displayCustomerBookingHistory( ) {
                 <p class="booking-bed-size">${ booking.roomDetails.bedSize.charAt( 0 ).toUpperCase( ) + booking.roomDetails.bedSize.slice( 1 ) } Bed ( ${ booking.roomDetails.numBeds } )</p>
                 <p class="booking-cost">Room Cost: $${ booking.roomDetails.costPerNight }</p>
             </section>`
-    } )
+    } );
 }
 
 
@@ -101,14 +99,12 @@ function getAvailableRoomsByDate( e ) {
     bookingHistoryDisplay.classList.add( 'hidden' );
     availavbleRoomsByDateGrid.classList.remove( 'hidden' );
     availavbleRoomsByTypeGrid.classList.add( 'hidden' );
-    roomTypesDiv.classList.remove('hidden')
-    roomTypeDropDownMenu += `<option value="${ roomTypeDropDownMenu.value }">${ roomTypeDropDownMenu.value }</option>`
-    hotel.checkAvailabilityByDate( e.target.value )
+    roomTypesDiv.classList.remove( 'hidden' );
+    hotel.checkAvailabilityByDate( e.target.value );
     if ( !hotel.roomAvailability.length ) {
         bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there is no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
     } else {
         hotel.roomAvailability.forEach( availableRoom => {
-            console.log('AVAILABLE: ', availableRoom)
             bookingHitsoryTitleText.innerText = `There are ${ hotel.roomAvailability.length } rooms available on ${ dayjs( e.target.value ).format( "MMMM D, YYYY" ) }`;  
             availavbleRoomsByDateGrid.innerHTML += 
             `<section class="grid-item grid-item-1">
@@ -121,7 +117,7 @@ function getAvailableRoomsByDate( e ) {
                 <p class="booking-cost">Room Cost: $${ availableRoom.costPerNight }</p>
                 <input type="submit" value="Book It!" name="select-booking" class="submit-button" id="${ availableRoom.number }"></input>
             </section>`  
-        } )   
+        } ); 
     }
 }
 
@@ -155,7 +151,7 @@ function filterAvailableRoomsByRoomTypeOnPage( e ){
                 <input type="submit" value="Book It!" name="submit-button" class="submit-button" id="${ availableRoom.number }"></input>
             </section>`
             
-        } )   
+        } );
     }
 }
 
@@ -167,7 +163,7 @@ function getPostedRoomDataFromForm( e ) {
         date: dayjs( postedRoomData.get( 'select-date' ) ).format( 'YYYY/MM/DD' ), 
         roomNumber: parseInt( e.target.id )
     };
-    return newBookedRoom
+    return newBookedRoom;
 }
 
 
@@ -178,18 +174,19 @@ function bookAvailableRoom( e ) {
     let fetchMeThatPromise = getData( 'bookings' );
     Promise.all( [ promiseMyYouWillPost, fetchMeThatPromise ] )
         .then( response => {
-            window.alert( `WOO HOO!!! You're room is booked for ${ dayjs( response[ 0 ].newBooking.date ).format( "dddd, MMMM D YYYY" ) }!` )
+            window.alert( `WOO HOO!!! You're room is booked for ${ dayjs( response[ 0 ].newBooking.date ).format( "dddd, MMMM D YYYY" ) }!` );
             booking = new Booking( response[ 0 ].newBooking );
         } )
-        .catch( error => console.log( 'ERROR: ', error ) )
+        .catch( error => console.log( 'ERROR: ', error ) );
 }
 
 
 function returnHome( ){
+    returnHomeButton.classList.add( 'hidden' );
     bookingHistoryDisplay.classList.remove( 'hidden' );
     availavbleRoomsByDateGrid.classList.add( 'hidden' );
     availavbleRoomsByTypeGrid.classList.add( 'hidden' );
-    roomTypesDiv.classList.add('hidden');
+    roomTypesDiv.classList.add( 'hidden' );
     loadData( );
 }
 
@@ -201,26 +198,28 @@ function checkCustomerIsValidOnLogin( event ) {
         fetch( `http://localhost:3001/api/v1/customers/${ checkCustomerIsValid( customerLoginInfo.get( 'username' ) ) }` )
         .then( response => response.json( ) )
         .then( response => {
-            whosTheCustomer( response ) 
-            loadData( response ) 
+            whosTheCustomer( response );
+            loadData( response );
             currentCustomer = new Customer( response );
         } )
-        .catch( error => console.log( error ) )
+        .catch( error => console.log( 'ERROR: ', error ) );
     } else {
         window.alert( 'Invalid Username, or Password' );
-        event.target.reset( )
+        event.target.reset( );
     }
 }
+
 
 function checkCustomerIsValid( userName ) {
     let customer = userName.substring( 0, 8 );
     let customerId = userName.substring( 8 );
         if ( customer === 'customer' && parseInt( customerId ) < 51 ) {
-            return customerId
+            return customerId;
         } else {
-            return false
+            return false;
         };
 }
+
 
 function whosTheCustomer( listOfCustomers ) {
     return new Customer( listOfCustomers );

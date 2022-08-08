@@ -1,7 +1,7 @@
 export let getData = ( dataType ) => {
     return fetch( `http://localhost:3001/api/v1/${ dataType }` )
         .then( response => response.json( ) )
-        .catch( error => console.log( error ) );
+        .catch( error => console.log( 'ERROR: ', error ) );
 }
 
 
@@ -15,10 +15,10 @@ export let postData = ( data ) => {
     } )
         .then( response => {
             if( !response.ok ) {
-                throw new Error( 'We can\'t process your Booking request at this time. Please try again later.' )
+                throw new Error( 'We can\'t process your Booking request at this time. Please try again later.' );
             } else {
-                return response.json( ) 
+                return response.json( );
             }
         } )
-        .catch( error => console.log( error ) );
+        .catch( error => console.log( 'ERROR: ', error ) );
 }
