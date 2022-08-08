@@ -106,7 +106,7 @@ function getAvailableRoomsByDate( e ) {
     roomTypeDropDownMenu += `<option value="${ roomTypeDropDownMenu.value }">${ roomTypeDropDownMenu.value }</option>`
     hotel.checkAvailabilityByDate( e.target.value )
     if ( !hotel.roomAvailability.length ) {
-        bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there's no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
+        bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there is no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
     } else {
         hotel.roomAvailability.forEach( availableRoom => {
             console.log('AVAILABLE: ', availableRoom)
@@ -133,7 +133,13 @@ function filterAvailableRoomsByRoomTypeOnPage( e ){
     availavbleRoomsByDateGrid.classList.add( 'hidden' );
     availavbleRoomsByTypeGrid.classList.remove( 'hidden' );
     const filteredRoomsByType = hotel.filterAvailableRoomsByType( e.target.value );
-    filteredRoomsByType.forEach( availableRoom => {
+    if ( !filteredRoomsByType.length ) {
+        bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there are no ${ e.target.value.toLowerCase( )
+            .split(' ')
+            .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
+            .join(' ') }s available on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
+    } else {
+        filteredRoomsByType.forEach( availableRoom => {
             bookingHitsoryTitleText.innerText = `There are ${ filteredRoomsByType.length } ${ e.target.value.toLowerCase( )
                 .split(' ')
                 .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
@@ -149,7 +155,9 @@ function filterAvailableRoomsByRoomTypeOnPage( e ){
                 <p class="booking-cost">Room Cost: $${ availableRoom.costPerNight }</p>
                 <input type="submit" value="Book It!" name="submit-button" class="submit-button" id="${ availableRoom.number }"></input>
             </section>`
-    } )   
+            
+        } )   
+    }
 }
 
 
