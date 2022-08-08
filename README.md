@@ -36,23 +36,31 @@ https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-
 
 https://user-images.githubusercontent.com/97558758/183460452-b2936622-6801-496e-a7f0-5ab9c1605c73.mov
 
-* Filter by Date and Room Type
+* Filter by Date and Room Type:
 
-https://user-images.githubusercontent.com/97558758/183264344-b77b443b-96fa-4dc4-9631-9c6ac881ee50.mov
+https://user-images.githubusercontent.com/97558758/183460821-89536cdf-5746-4521-8557-d4fb829a85a4.mov
 
-* Book a Room and Return Home
+* Book a Room:
 
-https://user-images.githubusercontent.com/97558758/183264356-d90b1f90-3988-4cb3-ac89-97e4c5f7a049.mov
+https://user-images.githubusercontent.com/97558758/183460960-02d31d8b-ac4a-41a1-bbab-5bf474ef0ecd.mov
+
+* Return Home and See Added Booking:
+
+https://user-images.githubusercontent.com/97558758/183461109-49e37e18-4ff5-4892-b998-c887843dd695.mov
 
 ### Error Handling: <a name="error"></a>
 
 * Customer Login Error Handling:
 
-https://user-images.githubusercontent.com/97558758/183302050-0efffb9d-992f-4f2b-a0c1-fb6c6875779f.mov
+https://user-images.githubusercontent.com/97558758/183461191-7095cbd0-ce6a-4a8d-a4b9-efda68016e73.mov
 
-* No Room Availavility Error Handling: 
+* No Room Availavility  by DATE Error Handling: 
 
-https://user-images.githubusercontent.com/97558758/183301900-7b1a9d6d-605d-4c99-b1e3-af26139e9240.mov
+https://user-images.githubusercontent.com/97558758/183461265-25e4b92a-541f-4580-a8ce-432edc6c92a2.mov
+
+* No Room Availavility  by Room TYPE Error Handling: 
+
+https://user-images.githubusercontent.com/97558758/183461274-f29ec3d9-f156-4590-aff5-1dbf1ebf8687.mov
 
 
 <br>
