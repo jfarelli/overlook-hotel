@@ -54,7 +54,6 @@ button:active {
   border: none;
   border-radius: 5px;
   padding: 5px 15px 5px 15px;
-  transform: translateY( -6px );
   cursor: pointer;
   box-shadow: 0 1px 6px rgba( 0, 0, 0, .25 );
   margin-top: 15px;
