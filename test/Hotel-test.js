@@ -75,6 +75,7 @@ describe( 'Hotel', ( ) => {
                     }
                 ]
             );
+            
         hotel.checkAvailabilityByDate( "2022/02/16" );
         expect( hotel.roomAvailability).to.be.a( "array" );
         expect( hotel.roomAvailability).to.not.deep.equal( [ ] );
