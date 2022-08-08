@@ -77,7 +77,6 @@ function displayCustomerBookingHistory( ) {
     currentCustomer.getCustomerBookingHistory( listOfBookings, listOfRooms );
     customerRoomsTotalCost.innerHTML = `Lifetime Bookings Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
     return currentCustomer.customerBookingHistory.map( booking => {
-        console.log('BOOKING: ', booking)
         bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`
         bookingHistoryDisplay.innerHTML += 
             `<section class="grid-item grid-item-1">

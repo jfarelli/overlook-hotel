@@ -30,11 +30,11 @@
     * Username will be the word customer followed by a number from 1-50 to pull up a user: `customer32`
     * Password will be: `overlook2021`
 
-https://user-images.githubusercontent.com/97558758/183264276-c8837a8d-0c06-48c5-b702-53e3aec141c2.mov
+https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-b319-d9088f8c2019.mov
 
 * Customer Display:
 
-https://user-images.githubusercontent.com/97558758/183264327-214da683-4fa9-49fa-b73a-f176d1d20068.mov
+https://user-images.githubusercontent.com/97558758/183460178-b5e8fcdb-8be2-4824-997b-b9792ef8e60e.mov
 
 * Filter by Date and Room Type
 
