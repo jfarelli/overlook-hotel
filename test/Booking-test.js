@@ -63,10 +63,12 @@ describe( 'Booking', ( ) => {
     booking1.getRoomDetailsFromBookings( roomsData );
     expect( booking1.roomDetails ).to.be.a.instanceOf( Room );
     expect( booking1.roomDetails.number ).to.equal( 1 );
+    expect( booking1.roomDetails.number ).to.not.equal( 2 );
 
     booking2.getRoomDetailsFromBookings( roomsData );
     expect( booking2.roomDetails ).to.be.a.instanceOf( Room );
     expect( booking2.roomDetails.number ).to.equal( 2 );
+    expect( booking2.roomDetails.number ).to.not.equal( 1 );
   } );
 
 } );

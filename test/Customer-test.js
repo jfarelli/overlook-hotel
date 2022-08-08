@@ -57,6 +57,7 @@ describe( 'Customer', ( ) => {
   it( 'Should get the Customer\'s Booking HISTORY', ( ) => {
     customer1.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer1.customerBookingHistory ).to.be.a( "array" );
+    expect( customer1.customerBookingHistory ).to.not.deep.equal( [ ] );
     expect( customer1.customerBookingHistory ).to.deep.equal
       ( 
         [
@@ -121,6 +122,7 @@ describe( 'Customer', ( ) => {
 
     customer2.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer2.customerBookingHistory ).to.be.a( "array" );
+    expect( customer2.customerBookingHistory ).to.not.deep.equal( [ ] );
     expect( customer2.customerBookingHistory ).to.deep.equal
       ( 
         [
@@ -173,10 +175,12 @@ describe( 'Customer', ( ) => {
   it( 'Should get the TOTAL COST of Customer\'s Booking HISTORY', ( ) => {
     customer1.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.be.a( "string" );
+    expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.not.equal( 1,685.32 );
     expect( customer1.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1,685.32' );
-
+    
     customer2.getCustomerBookingHistory( bookingData, roomsData );
     expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.be.a( "string" );
+    expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.not.equal( 1,326.92 );
     expect( customer2.getTotalCostOfRoomsForCustomer( ) ).to.equal( '1,326.92' );
   } );
 
