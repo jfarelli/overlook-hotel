@@ -27,13 +27,13 @@
 ### How To Use: <a name="how"></a>
 
 * Logging in:
-    * Username will be the word customer followed by a number from 1-50 to pull up a user: `customer32`
+    * Username will be the word **customer** followed by a number from **1-50** to pull up a user: `customer32`
     * Password will be: `overlook2021`
 
 https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-b319-d9088f8c2019.mov
 
 * Customer Display:
-    * The Customer is presented with a display that welcomes them and shows their total spent on room bookings.
+    * The Customer is presented with a display that welcomes them and shows their "Lifetime Booking Total".
     * The Customer is also presented with a message saying how many rooms they have in their booking history, and a display of all their past and future trips organized by date.
 
 https://user-images.githubusercontent.com/97558758/183460452-b2936622-6801-496e-a7f0-5ab9c1605c73.mov
@@ -45,7 +45,7 @@ https://user-images.githubusercontent.com/97558758/183460452-b2936622-6801-496e-
 https://user-images.githubusercontent.com/97558758/183460821-89536cdf-5746-4521-8557-d4fb829a85a4.mov
 
 * Book a Room:
-    * After the Customer has filtered available rooms, they can now select a room for booking by clicking the "Book It!" button that appears.
+    * After the Customer has filtered available rooms by date, they can now select a room for booking by clicking the "Book It!" button that appears.
     * After the "Book It!" button is clicked the user will be shown an alert that confirms their room has been booked for the date selected.
 
 https://user-images.githubusercontent.com/97558758/183460960-02d31d8b-ac4a-41a1-bbab-5bf474ef0ecd.mov
