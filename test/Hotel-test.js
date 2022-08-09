@@ -45,7 +45,6 @@ describe( 'Hotel', ( ) => {
     it( 'Should check Room Availability', ( ) => {
         hotel.checkAvailabilityByDate( "2022/01/24" )
         expect( hotel.roomAvailability).to.be.a( "array" );
-        expect( hotel.roomAvailability).to.not.deep.equal( [ ] );
         expect( hotel.roomAvailability).to.deep.equal
             ( 
                 [
@@ -75,10 +74,10 @@ describe( 'Hotel', ( ) => {
                     }
                 ]
             );
+        expect( hotel.roomAvailability).to.not.deep.equal( [ ] );
             
         hotel.checkAvailabilityByDate( "2022/02/16" );
         expect( hotel.roomAvailability).to.be.a( "array" );
-        expect( hotel.roomAvailability).to.not.deep.equal( [ ] );
         expect( hotel.roomAvailability).to.deep.equal
             ( 
                 [
@@ -116,6 +115,10 @@ describe( 'Hotel', ( ) => {
                     }
                 ]
             );
+        expect( hotel.roomAvailability).to.not.deep.equal( [ ] );
+        
+        hotel.checkAvailabilityByDate( "2022/02/06" );
+        expect( hotel.roomAvailability ).to.deep.equal( [ ] );
     } ); 
 
     it( 'Should filter available Rooms in the Hotel by TYPE', ( ) => {

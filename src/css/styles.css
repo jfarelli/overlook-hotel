@@ -18,8 +18,8 @@ h1 {
 
 h3 {
   margin: 0;
-  margin-top: 5px;
-  font-size: 30px;
+  margin-top: 10px;
+  font-size: 24px;
 }
 
 label {
@@ -185,27 +185,22 @@ button:active {
 .booking-date, 
 .booking-cost {
   font-size: 20px;
+  font-weight: bolder;
 }
 
 .booking-date {
-  font-weight: bolder;
   margin: 5px;
-  font-size: 20px;
 }
 
-.booking-room-type {
-  margin: 10px;
-  font-size: 15px;
-  font-size: 17px;
-}
-
-.booking-bed-size {
-  margin: 10px;
-  font-size: 15px;
-}
-
+.booking-room-type, 
+.booking-bed-size, 
 .booking-cost {
   margin: 10px;
+}
+
+.booking-room-type,
+.booking-bed-size {
+  font-size: 17px;
 }
 
 .book-it-button {

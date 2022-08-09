@@ -65,15 +65,15 @@ https://user-images.githubusercontent.com/97558758/183461109-49e37e18-4ff5-4892-
 
 https://user-images.githubusercontent.com/97558758/183461191-7095cbd0-ce6a-4a8d-a4b9-efda68016e73.mov
 
-* No Room Availavility  by DATE Error Handling: 
+* No Room Availavility by DATE Error Handling: 
     * If there are no available rooms on the date selected by the Customer, a message will appear on the screen notifying the Customer.
 
-https://user-images.githubusercontent.com/97558758/183461265-25e4b92a-541f-4580-a8ce-432edc6c92a2.mov
+https://user-images.githubusercontent.com/97558758/183764491-c16b6b78-985b-4032-9962-b915b7bb7161.mov
 
-* No Room Availavility  by Room TYPE Error Handling: 
+* No Room Availavility by Room TYPE Error Handling: 
     * If there are no available room types on the date selected by the Customer, a message will appear on the screen notifying the Customer.
 
-https://user-images.githubusercontent.com/97558758/183461274-f29ec3d9-f156-4590-aff5-1dbf1ebf8687.mov
+https://user-images.githubusercontent.com/97558758/183764549-5ce115c1-5dca-4fca-b578-b9fec396f8e3.mov
 
 
 <br>

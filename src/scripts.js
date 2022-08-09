@@ -75,6 +75,7 @@ function displayCustomerBookingHistory( ) {
     currentCustomer.getCustomerBookingHistory( listOfBookings, listOfRooms );
     customerRoomsTotalCost.innerHTML = `Lifetime Bookings Total <b>$${ currentCustomer.getTotalCostOfRoomsForCustomer( ) }</b>`;
     return currentCustomer.customerBookingHistory.map( booking => {
+        console.log('booking: ', booking)
         bookingHitsoryTitleText.innerText = `You have ${ currentCustomer.customerBookingHistory.length } rooms in your booking history.`;
         bookingHistoryDisplay.innerHTML += 
             `<section class="grid-item grid-item-1">
@@ -102,7 +103,9 @@ function getAvailableRoomsByDate( e ) {
     roomTypesDiv.classList.remove( 'hidden' );
     hotel.checkAvailabilityByDate( e.target.value );
     if ( !hotel.roomAvailability.length ) {
-        bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there is no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
+        bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there is no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }. Please choose another date.`;
+    } else if ( calendarInput.value < dayjs( Date.now() ).format( "YYYY-MM-DD" ) ) {
+        bookingHitsoryTitleText.innerText = 'Please chose a future date for booking.'
     } else {
         hotel.roomAvailability.forEach( availableRoom => {
             bookingHitsoryTitleText.innerText = `There are ${ hotel.roomAvailability.length } rooms available on ${ dayjs( e.target.value ).format( "MMMM D, YYYY" ) }`;  
@@ -129,10 +132,10 @@ function filterAvailableRoomsByRoomTypeOnPage( e ){
     availavbleRoomsByTypeGrid.classList.remove( 'hidden' );
     const filteredRoomsByType = hotel.filterAvailableRoomsByType( e.target.value );
     if ( !filteredRoomsByType.length ) {
-        bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there are no ${ e.target.value.toLowerCase( )
+        bookingHitsoryTitleText.innerText = `FIERCE appologies, but there are no ${ e.target.value.toLowerCase( )
             .split(' ')
             .map( ( word ) => word.charAt( 0 ).toUpperCase( ) + word.substring( 1 ) )
-            .join(' ') }s available on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }.`;  
+            .join(' ') }s available on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }. Please choose another room type.`;  
     } else {
         filteredRoomsByType.forEach( availableRoom => {
             bookingHitsoryTitleText.innerText = `There are ${ filteredRoomsByType.length } ${ e.target.value.toLowerCase( )
