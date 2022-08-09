@@ -67,15 +67,17 @@ https://user-images.githubusercontent.com/97558758/183461191-7095cbd0-ce6a-4a8d-
 
 * No Room Availavility by DATE Error Handling: 
     * If there are no available rooms on the date selected by the Customer, a message will appear on the screen notifying the Customer.
+    * NOTE: This project had a wide array of data, but nothing in the future was booked out, so I found a past date that was booked out to show my error handling works, but I later edited my code so the customer may not choose a past date for booking.
 
 https://user-images.githubusercontent.com/97558758/183764491-c16b6b78-985b-4032-9962-b915b7bb7161.mov
 
 * No Room Availavility by Room TYPE Error Handling: 
     * If there are no available room types on the date selected by the Customer, a message will appear on the screen notifying the Customer.
+    * NOTE: Same thing for this video as above. I found a past date that had a smaller selection of room types and recorded the clip using that past date to show my error handling works, but then later edited my code, so that the user may not choose a past date.
 
 https://user-images.githubusercontent.com/97558758/183764549-5ce115c1-5dca-4fca-b578-b9fec396f8e3.mov
 
-* Selecting a Past Date
+* Selecting a Past Date:
 
 https://user-images.githubusercontent.com/97558758/183773217-b1ebb084-6672-48ac-b9a3-dbc7f052ce4a.mov
 
