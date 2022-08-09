@@ -177,7 +177,7 @@ function bookAvailableRoom( e ) {
             window.alert( `WOO HOO!!! You're room is booked for ${ dayjs( response[ 0 ].newBooking.date ).format( "dddd, MMMM D YYYY" ) }!` );
             booking = new Booking( response[ 0 ].newBooking );
         } )
-        .catch( error => console.log( 'ERROR in .CATCH( ): ', error ) );
+        .catch( error => console.log( 'ERROR: ', error ) );
 }
 
 
@@ -202,7 +202,7 @@ function checkCustomerIsValidOnLogin( event ) {
             loadData( response );
             currentCustomer = new Customer( response );
         } )
-        .catch( error => console.log( 'ERROR in .CATCH( ): ', error ) );
+        .catch( error => console.log( 'ERROR: ', error ) );
     } else {
         window.alert( 'Invalid Username, or Password' );
         event.target.reset( );
