@@ -105,7 +105,7 @@ function getAvailableRoomsByDate( e ) {
     if ( !hotel.roomAvailability.length ) {
         bookingHitsoryTitleText.innerText = `We FIERCELY appologize, but there is no availability on ${ dayjs( calendarInput.value ).format( "MMMM D, YYYY" ) }. Please choose another date.`;
     } else if ( calendarInput.value < dayjs( Date.now() ).format( "YYYY-MM-DD" ) ) {
-        bookingHitsoryTitleText.innerText = 'Please chose a future date for booking.'
+        bookingHitsoryTitleText.innerText = 'Please select the current date, or a future date for booking.'
     } else {
         hotel.roomAvailability.forEach( availableRoom => {
             bookingHitsoryTitleText.innerText = `There are ${ hotel.roomAvailability.length } rooms available on ${ dayjs( e.target.value ).format( "MMMM D, YYYY" ) }`;  

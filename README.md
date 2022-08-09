@@ -75,6 +75,10 @@ https://user-images.githubusercontent.com/97558758/183764491-c16b6b78-985b-4032-
 
 https://user-images.githubusercontent.com/97558758/183764549-5ce115c1-5dca-4fca-b578-b9fec396f8e3.mov
 
+* Selecting a Past Date
+
+https://user-images.githubusercontent.com/97558758/183773217-b1ebb084-6672-48ac-b9a3-dbc7f052ce4a.mov
+
 
 <br>
 
