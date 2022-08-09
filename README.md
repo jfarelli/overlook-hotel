@@ -29,7 +29,7 @@
 
 ### How To Use: <a name="how"></a>
 
-* **Logging in:**
+* **<u>Logging-In</u>:**
     * Username will be the word **customer** followed by a number from **1-50** to pull up a user. (i.e. `customer32`)
     * Password will be: `overlook2021`
 
@@ -37,7 +37,7 @@ https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-
 
 <br>
 
-* **Customer Display:**
+* **<u>Customer Display</u>:**
     * The Customer is presented with a display that welcomes them and shows their **"Lifetime Booking Total"**.
     * The Customer is also presented with a **message** saying how many rooms they have in their booking history, and a display of all their past and future trips organized by date.
 
@@ -45,7 +45,7 @@ https://user-images.githubusercontent.com/97558758/183460452-b2936622-6801-496e-
 
 <br>
 
-* **Filter by Date and Room Type:**
+* **<u>Filter by Date and Room Type</u>:**
     * The calendar at the top-right of the page allows you to filter available rooms by **Date**.
     * Once a date is selected, a drop-down menu appears to further filter those rooms by **Room Type**.
 
@@ -53,7 +53,7 @@ https://user-images.githubusercontent.com/97558758/183460821-89536cdf-5746-4521-
 
 <br>
 
-* **Book a Room:**
+* **<u>Book a Room</u>:**
     * After the Customer has filtered available rooms by date, they can now select a room for booking by clicking the **"Book It!"** button that appears on the bottom of the card.
     * After the **"Book It!"** button is clicked the user will be shown an alert that confirms their room has been booked for the date selected.
 
@@ -61,7 +61,7 @@ https://user-images.githubusercontent.com/97558758/183460960-02d31d8b-ac4a-41a1-
 
 <br>
 
-* **Return Home and See Added Booking:**
+* **<u>Return Home and See Added Booking</u>:**
     * The Customer can click the **"Return Home"** button at anytime to go back to their main page.
     * If the **"Return Home"** button is clicked after a successful booking, the Customer will be returned to their homepage that will show their updated **"Lifetime Booking Total"**, and the new booking will be placed in the Customer's booking history, **organized by date**.
 
@@ -71,7 +71,7 @@ https://user-images.githubusercontent.com/97558758/183461109-49e37e18-4ff5-4892-
 
 ### Error Handling: <a name="error"></a>
 
-* **Customer Login Error Handling:**
+* **<u>Customer Login Error Handling</u>:**
     * If the Customer enters an invalid Username, or Password, they will be presented with an alert notifying them.
     * Upon clicking the "OK" button on the alert, the login form will reset and they can try again.
 
@@ -79,7 +79,7 @@ https://user-images.githubusercontent.com/97558758/183461191-7095cbd0-ce6a-4a8d-
 
 <br>
 
-* **No Room Availavility by DATE Error Handling:**
+* **<u>No Room Availavility by DATE Error Handling</u>:**
     * If there are no available rooms on the date selected by the Customer, a message will appear on the screen notifying the Customer.
     * **NOTE:** This project had a wide array of data, but nothing in the future was booked out, so I found a past date that was booked out to show my error handling works, but I later edited my code so the customer may not choose a past date for booking.
 
@@ -87,7 +87,7 @@ https://user-images.githubusercontent.com/97558758/183764491-c16b6b78-985b-4032-
 
 <br>
 
-* **No Room Availavility by Room TYPE Error Handling:**
+* **<u>No Room Availavility by Room TYPE Error Handling</u>:**
     * If there are no available room types on the date selected by the Customer, a message will appear on the screen notifying the Customer.
     * **NOTE:** Same thing for this video as above. I found a past date that had a smaller selection of room types and recorded the clip using that past date to show my error handling works, but then later edited my code, so that the user may not choose a past date.
 
@@ -95,7 +95,7 @@ https://user-images.githubusercontent.com/97558758/183764549-5ce115c1-5dca-4fca-
 
 <br>
 
-* **Selecting a Past Date:**
+* **<u>Selecting a Past Date</u>:**
     * If the Customer selects a date prior to the current date, they will be shown a message letting them know they need to choose the current date, or a future date for booking.
 
 https://user-images.githubusercontent.com/97558758/183773217-b1ebb084-6672-48ac-b9a3-dbc7f052ce4a.mov
