@@ -30,7 +30,7 @@
 ### How To Use: <a name="how"></a>
 
 * **Logging in:**
-    * Username will be the word **customer** followed by a number from **1-50** to pull up a user. ( i.e. `customer32` )
+    * Username will be the word **customer** followed by a number from **1-50** to pull up a user. (i.e. `customer32`)
     * Password will be: `overlook2021`
 
 https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-b319-d9088f8c2019.mov
