@@ -22,49 +22,48 @@
 * Now that you have that visit this [GitHub](https://github.com/turingschool-examples/overlook-api) and clone it down into a seperate folder outside of the one you previously cloned.
 * Then, CD into the folder and run `npm install` and then `npm start`
 * No need to copy and paste an address for this.
-* The website should be functioning now!
+* **The website should be functioning now!**
 * To stop running the server, use Control + C in the terminal. (Closing the terminal without stopping the server first could allow the server to continue to run in the background and cause problems.)
 
 <br>
 
 ### How To Use: <a name="how"></a>
 
-* Logging in:
-    * Username will be the word **customer** followed by a number from **1-50** to pull up a user: `customer32`
+* **Logging in:**
+    * Username will be the word **customer** followed by a number from **1-50** to pull up a user. ( i.e. `customer32` )
     * Password will be: `overlook2021`
 
 https://user-images.githubusercontent.com/97558758/183459893-a8584e29-e886-4d48-b319-d9088f8c2019.mov
 
 <br>
 
-* Customer Display:
-    * The Customer is presented with a display that welcomes them and shows their "Lifetime Booking Total".
-    * The Customer is also presented with a message saying how many rooms they have in their booking history, and a display of all their past and future trips organized by date.
+* **Customer Display:**
+    * The Customer is presented with a display that welcomes them and shows their **"Lifetime Booking Total"**.
+    * The Customer is also presented with a **message** saying how many rooms they have in their booking history, and a display of all their past and future trips organized by date.
 
 https://user-images.githubusercontent.com/97558758/183460452-b2936622-6801-496e-a7f0-5ab9c1605c73.mov
 
 <br>
 
-* Filter by Date and Room Type:
-    * The calendar at the top-right of the page allows you to filter available rooms by date.
-    * Once a date is selected a drop-down menu appears to further filter those room by room type.
+* **Filter by Date and Room Type:**
+    * The calendar at the top-right of the page allows you to filter available rooms by **Date**.
+    * Once a date is selected, a drop-down menu appears to further filter those rooms by **Room Type**.
 
 https://user-images.githubusercontent.com/97558758/183460821-89536cdf-5746-4521-8557-d4fb829a85a4.mov
 
 <br>
 
-* Book a Room:
-    * After the Customer has filtered available rooms by date, they can now select a room for booking by clicking the "Book It!" button that appears.
-    * After the "Book It!" button is clicked the user will be shown an alert that confirms their room has been booked for the date selected.
+* **Book a Room:**
+    * After the Customer has filtered available rooms by date, they can now select a room for booking by clicking the **"Book It!"** button that appears on the bottom of the card.
+    * After the **"Book It!"** button is clicked the user will be shown an alert that confirms their room has been booked for the date selected.
 
 https://user-images.githubusercontent.com/97558758/183460960-02d31d8b-ac4a-41a1-bbab-5bf474ef0ecd.mov
 
 <br>
 
-* Return Home and See Added Booking:
-    * The Customer can click the "Return Home" button at anytime to go back to their main page.
-    * If the "Return Home" button is clicked after a successful booking, the Customer will be returned home and their "Lifetime Booking Total" will be updated.
-    * The new booking will be placed in the Customer's booking history.
+* **Return Home and See Added Booking:**
+    * The Customer can click the **"Return Home"** button at anytime to go back to their main page.
+    * If the **"Return Home"** button is clicked after a successful booking, the Customer will be returned to their homepage that will show their updated **"Lifetime Booking Total"**, and the new booking will be placed in the Customer's booking history, **organized by date**.
 
 https://user-images.githubusercontent.com/97558758/183461109-49e37e18-4ff5-4892-b998-c887843dd695.mov
 
@@ -72,7 +71,7 @@ https://user-images.githubusercontent.com/97558758/183461109-49e37e18-4ff5-4892-
 
 ### Error Handling: <a name="error"></a>
 
-* Customer Login Error Handling:
+* **Customer Login Error Handling:**
     * If the Customer enters an invalid Username, or Password, they will be presented with an alert notifying them.
     * Upon clicking the "OK" button on the alert, the login form will reset and they can try again.
 
@@ -80,7 +79,7 @@ https://user-images.githubusercontent.com/97558758/183461191-7095cbd0-ce6a-4a8d-
 
 <br>
 
-* No Room Availavility by DATE Error Handling: 
+* **No Room Availavility by DATE Error Handling:**
     * If there are no available rooms on the date selected by the Customer, a message will appear on the screen notifying the Customer.
     * **NOTE:** This project had a wide array of data, but nothing in the future was booked out, so I found a past date that was booked out to show my error handling works, but I later edited my code so the customer may not choose a past date for booking.
 
@@ -88,7 +87,7 @@ https://user-images.githubusercontent.com/97558758/183764491-c16b6b78-985b-4032-
 
 <br>
 
-* No Room Availavility by Room TYPE Error Handling: 
+* **No Room Availavility by Room TYPE Error Handling:**
     * If there are no available room types on the date selected by the Customer, a message will appear on the screen notifying the Customer.
     * **NOTE:** Same thing for this video as above. I found a past date that had a smaller selection of room types and recorded the clip using that past date to show my error handling works, but then later edited my code, so that the user may not choose a past date.
 
@@ -96,8 +95,8 @@ https://user-images.githubusercontent.com/97558758/183764549-5ce115c1-5dca-4fca-
 
 <br>
 
-* Selecting a Past Date:
-    * If the Customer selects a date prior to the current date, they will be shown a message to let them know they need to choose the current date, or a future date for booking.
+* **Selecting a Past Date:**
+    * If the Customer selects a date prior to the current date, they will be shown a message letting them know they need to choose the current date, or a future date for booking.
 
 https://user-images.githubusercontent.com/97558758/183773217-b1ebb084-6672-48ac-b9a3-dbc7f052ce4a.mov
 
@@ -132,4 +131,4 @@ Chai<br>
 
 ### Contributors: <a name="contributors"></a>
 
-Jordan Farelli: [LinkedIn](https://www.linkedin.com/in/jordan-farelli/) | [GitHub](https://github.com/jfarelli)
+**Jordan Farelli:** [LinkedIn](https://www.linkedin.com/in/jordan-farelli/) | [GitHub](https://github.com/jfarelli)
