@@ -11,6 +11,8 @@
 * [Technologies Used](#tech)
 * [Contributors](#contributors)
 
+<br>
+
 ### Setting Up: <a name="setup"></a>
 
 * Clone down the repo by clicking the green **Code** button, and then copying the link under **SSH**.
@@ -23,6 +25,7 @@
 * The website should be functioning now!
 * To stop running the server, use Control + C in the terminal. (Closing the terminal without stopping the server first could allow the server to continue to run in the background and cause problems.)
 
+<br>
 
 ### How To Use: <a name="how"></a>
 
@@ -65,6 +68,8 @@ https://user-images.githubusercontent.com/97558758/183460960-02d31d8b-ac4a-41a1-
 
 https://user-images.githubusercontent.com/97558758/183461109-49e37e18-4ff5-4892-b998-c887843dd695.mov
 
+<br>
+
 ### Error Handling: <a name="error"></a>
 
 * Customer Login Error Handling:
@@ -96,10 +101,7 @@ https://user-images.githubusercontent.com/97558758/183764549-5ce115c1-5dca-4fca-
 
 https://user-images.githubusercontent.com/97558758/183773217-b1ebb084-6672-48ac-b9a3-dbc7f052ce4a.mov
 
-
 <br>
-
-
 
 ### Challenges & Reflections: <a name="challenges"></a>
 * This project was a challenge, as I dealt with fetching API data from the server and also enabling the ability to POST a new Room booking for the Customer. 
